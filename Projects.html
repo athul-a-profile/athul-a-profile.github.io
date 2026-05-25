@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Athul A | Projects</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Outfit',sans-serif;
+      background:#0b0f19;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#7c3aed40;
+      filter:blur(140px);
+      top:-150px;
+      left:-150px;
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#06b6d440;
+      filter:blur(140px);
+      bottom:-150px;
+      right:-150px;
+      z-index:-1;
+    }
+
+    nav{
+      width:100%;
+      padding:22px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(10,10,20,0.5);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:800;
+      background:linear-gradient(to right,#06b6d4,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:#d1d5db;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      color:#06b6d4;
+    }
+
+    .hero{
+      padding:170px 8% 80px;
+      text-align:center;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:50px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+      color:#06b6d4;
+      margin-bottom:25px;
+      font-size:14px;
+      letter-spacing:1px;
+    }
+
+    .hero h1{
+      font-size:72px;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero h1 span{
+      background:linear-gradient(to right,#06b6d4,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      color:#bfc5d2;
+      line-height:1.9;
+      font-size:18px;
+    }
+
+    .projects{
+      padding:40px 8% 100px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .glass-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:35px;
+      backdrop-filter:blur(14px);
+      transition:0.4s;
+    }
+
+    .glass-card:hover{
+      transform:translateY(-10px);
+      border-color:#8b5cf6;
+      box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .glass-card h3{
+      color:#06b6d4;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .glass-card h4{
+      color:#d1d5db;
+      margin-bottom:15px;
+      font-weight:500;
+    }
+
+    .glass-card p{
+      color:#bfc5d2;
+      line-height:1.8;
+    }
+
+    .project-btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 24px;
+      border-radius:12px;
+      background:linear-gradient(to right,#06b6d4,#8b5cf6);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .project-btn:hover{
+      transform:translateY(-5px);
+    }
+
+    .btn-box{
+      text-align:center;
+      margin-top:60px;
+    }
+
+    .back-btn{
+      display:inline-block;
+      padding:15px 35px;
+      border-radius:14px;
+      background:linear-gradient(to right,#06b6d4,#8b5cf6);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .back-btn:hover{
+      transform:translateY(-5px);
+    }
+
+    footer{
+      padding:40px;
+      text-align:center;
+      color:#8f96a3;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:52px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav>
+
+    <div class="logo">Athul A</div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+
+  </nav>
+
+  <section class="hero">
+
+    <span class="hero-tag">
+      Portfolio Collection
+    </span>
+
+    <h1>
+      Featured <span>Projects</span>
+    </h1>
+
+    <p>
+      Showcasing my work in digital libraries,
+      library technologies,
+      research support services,
+      SEO,
+      web platforms,
+      and user-centered information systems.
+    </p>
+
+  </section>
+
+  <section class="projects">
+
+    <div class="grid">
+
+      <div class="glass-card">
+
+        <h3>SubjectPlus Installation @ IIM Kozhikode</h3>
+
+        <h4>Library Web Application Project</h4>
+
+        <p>
+          Installed and tested SubjectPlus at IIM Kozhikode
+          for subject guide management and library resource organization.
+          Configured the platform using XAMPP local server setup,
+          explored customization,
+          menu creation,
+          guide linking,
+          and library web integration features
+          for improving digital information access services.
+        </p>
+
+        <a href="subjectplus.html" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+      <div class="glass-card">
+
+        <h3>Library Website SEO Analysis @ IIT Gandhinagar</h3>
+
+        <h4>SEO & Discoverability Project</h4>
+
+        <p>
+          Conducted SEO analysis of the IIT Gandhinagar Library website
+          to improve discoverability,
+          metadata visibility,
+          indexing,
+          and search engine performance.
+        </p>
+
+        <a href="seo-project.html" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+      <div class="glass-card">
+
+        <h3>Digital Resource Guides @ IIT Gandhinagar</h3>
+
+        <h4>Research Support Project</h4>
+
+        <p>
+          Created digital resource guides,
+          tutorials,
+          and web-based support materials
+          for databases,
+          citation tools,
+          RemoteXs,
+          and scholarly resources
+          to support research and learning activities.
+        </p>
+
+        <a href="resource-guides.html" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+      <div class="glass-card">
+
+        <h3>LibGuides Cleanup & Optimization</h3>
+
+        <h4>Library Content Management</h4>
+
+        <p>
+          Reviewed LibGuides usage statistics,
+          identified inactive and test guides,
+          removed outdated content,
+          and optimized guide organization
+          for improved usability.
+        </p>
+
+        <a href="libguides.html" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+      <div class="glass-card">
+
+        <h3>RemoteXs Usage Analysis</h3>
+
+        <h4>Library Analytics Project</h4>
+
+        <p>
+          Generated and analyzed RemoteXs usage reports
+          including user-wise,
+          category-wise,
+          and resource-wise statistics
+          to understand digital resource usage trends.
+        </p>
+
+        <a href="remotexs.html" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+      <div class="glass-card">
+
+        <h3>Library Promotional Designs</h3>
+
+        <h4>Creative Outreach Project</h4>
+
+        <p>
+          Designed Kindle posters,
+          awareness pamphlets,
+          thematic displays,
+          and promotional materials
+          for improving library outreach and engagement.
+        </p>
+
+        <a href="designs.html" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="btn-box">
+
+      <a href="index.html" class="back-btn">
+        ← Back To Home
+      </a>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    © 2026 Athul A — Portfolio Website
+
+  </footer>
+
+</body>
+
+</html>
