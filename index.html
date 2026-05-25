@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Athul A | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:600px;
+      height:600px;
+      background:#1f3cff30;
+      filter:blur(150px);
+      top:-200px;
+      right:-100px;
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#00ffd530;
+      filter:blur(150px);
+      bottom:-200px;
+      left:-100px;
+      z-index:-1;
+    }
+
+    nav{
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.3);
+    }
+
+    nav h1{
+      color:#00ffd5;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      color:#00ffd5;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:120px 10%;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+      animation:fadeUp 1s ease;
+    }
+
+    .hero-text h2{
+      font-size:24px;
+      color:#00ffd5;
+      margin-bottom:10px;
+    }
+
+    .hero-text h1{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      max-width:650px;
+      line-height:1.9;
+      color:#cfcfcf;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      border-radius:50px;
+      background:linear-gradient(90deg,#00ffd5,#1f3cff);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.4s;
+      box-shadow:0 0 25px #00ffd560;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 40px #00ffd590;
+    }
+
+    .hero-img{
+      flex:1;
+      text-align:center;
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .hero-img img{
+      width:420px;
+      max-width:100%;
+      border-radius:30px;
+      border:2px solid #00ffd540;
+      box-shadow:0 0 40px #00ffd540;
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      font-size:42px;
+      text-align:center;
+      margin-bottom:50px;
+      color:#00ffd5;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:25px;
+      padding:30px;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#00ffd5;
+      box-shadow:0 0 30px #00ffd540;
+    }
+
+    .card h3{
+      color:#00ffd5;
+      margin-bottom:10px;
+    }
+
+    .card h4{
+      margin-bottom:10px;
+      color:#d8d8d8;
+    }
+
+    .card p{
+      line-height:1.8;
+      color:#cfcfcf;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:15px;
+    }
+
+    .skill{
+      padding:12px 24px;
+      border-radius:50px;
+      background:#11192e;
+      border:1px solid #00ffd540;
+      transition:0.3s;
+    }
+
+    .skill:hover{
+      background:#00ffd5;
+      color:black;
+      transform:scale(1.05);
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#999;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-20px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    @media(max-width:900px){
+
+      .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:52px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav>
+
+    <h1>Athul A</h1>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-text">
+
+      <h2>Hello, I'm</h2>
+
+      <h1>Athul A</h1>
+
+      <p>
+        Library & Information Professional focused on digital libraries,
+        scholarly communication, research support services,
+        web technologies, SEO for library websites,
+        and user-centered information access systems.
+      </p>
+
+      <a href="./Athul-CV.pdf" download class="btn">
+        Download CV
+      </a>
+
+    </div>
+
+    <div class="hero-img">
+
+      <img src="athul.png" alt="Athul A">
+
+    </div>
+
+  </section>
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+
+      <p>
+        Dedicated library professional seeking to leverage expertise in
+        information management, user services, scholarly communication,
+        and digital library systems to contribute effectively to
+        modern library environments. Passionate about web technologies,
+        digital repositories, SEO for library websites,
+        and improving user access to knowledge resources.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="experience">
+
+    <h2 class="section-title">Experience</h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>Library & Information Associate</h3>
+
+        <h4>IIM Kozhikode</h4>
+
+        <p><b>Nov 2024 - Present</b></p>
+
+        <br>
+
+        <p>
+          Worked in Information Resource Access & User Services,
+          Research Support & IT Management Services,
+          and Information Resource Acquisition & Technical Services.
+          Assisted with digital library operations,
+          circulation desk activities, website-related services,
+          thematic book displays, and user support.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Library Professional Trainee</h3>
+
+        <h4>IIT Gandhinagar</h4>
+
+        <p><b>July 2023 - July 2024</b></p>
+
+        <br>
+
+        <p>
+          Assisted with installation and maintenance of library software,
+          digital library systems, server-related tasks,
+          and SEO analysis of library websites.
+          Created resource guides and web-based support materials.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Library Intern</h3>
+
+        <h4>IIM Ahmedabad</h4>
+
+        <p><b>July 2022 - Aug 2022</b></p>
+
+        <br>
+
+        <p>
+          Worked in circulation, acquisition, reference services,
+          online databases, IT applications,
+          and routine library operations.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>M.Lib.I.Sc</h3>
+
+        <h4>Pondicherry University</h4>
+
+        <p><b>2021 - 2023</b></p>
+
+        <br>
+
+        <p>
+          Master of Library and Information Science - 78%
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>BSc Physics</h3>
+
+        <h4>Calicut University</h4>
+
+        <p><b>2017 - 2020</b></p>
+
+        <br>
+
+        <p>
+          Bachelor of Science in Physics - 63%
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Higher Secondary</h3>
+
+        <h4>Kerala Board of Examination</h4>
+
+        <p><b>2015 - 2017</b></p>
+
+        <br>
+
+        <p>
+          Higher Secondary Education - 82%
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+      <div class="skill">Koha</div>
+      <div class="skill">DSpace</div>
+      <div class="skill">WordPress</div>
+      <div class="skill">LibGuides</div>
+      <div class="skill">RemoteXs</div>
+      <div class="skill">Zotero</div>
+      <div class="skill">Mendeley</div>
+      <div class="skill">Turnitin</div>
+      <div class="skill">XAMPP</div>
+      <div class="skill">SEO</div>
+      <div class="skill">MS Office</div>
+      <div class="skill">Digital Libraries</div>
+
+    </div>
+
+  </section>
+
+  <section id="certifications">
+
+    <h2 class="section-title">Certifications</h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>UGC NET</h3>
+
+        <p>
+          Qualified UGC NET Assistant Professor - June 2023
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Web of Science Certification</h3>
+
+        <p>
+          Web of Science Certification Program 2023 - Season 3
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>ADINET Membership</h3>
+
+        <p>
+          ADINET Life Member - Membership No: L0009
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="languages">
+
+    <h2 class="section-title">Languages</h2>
+
+    <div class="skills">
+
+      <div class="skill">English</div>
+      <div class="skill">Malayalam</div>
+      <div class="skill">Hindi</div>
+      <div class="skill">Tamil</div>
+
+    </div>
+
+  </section>
+
+  <section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="card" style="text-align:center;">
+
+      <p style="margin-bottom:15px;">
+        📧 athulandikkavil@gmail.com
+      </p>
+
+      <p style="margin-bottom:15px;">
+        📞 +91 9947029726
+      </p>
+
+      <p>
+        📍 Kerala, India
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    © 2026 Athul A | Portfolio Website
+
+  </footer>
+
+</body>
+
+</html>
