@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athul A | SubjectPlus Project</title>
+  <link rel="icon" type="image/jpeg" href="athul-sketch.jpg">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo">Athul A<span>.</span></a>
+    <button class="menu-btn" id="menuToggle">☰</button>
+    <ul id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="library-guides.html">Library Guides</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="./Athul-CV.pdf" download class="nav-cta">Download CV</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <span class="hero-tag">Library Web Application Project</span>
+    <h1>SubjectPlus <span>Installation</span></h1>
+    <p>Installed and explored SubjectPlus as a subject guide management platform for organizing library resources, guides, and web-based support content.</p>
+  </section>
+
+  <section>
+    <div class="grid">
+      <div class="glass-card">
+        <h2>Project Overview</h2>
+        <p>The project focused on testing SubjectPlus for library subject guide creation and resource discovery. The setup helped evaluate how a library can organize databases, links, librarian profiles, and subject-based learning materials in one structured platform.</p>
+      </div>
+      <div class="glass-card">
+        <h2>Tools Used</h2>
+        <p>SubjectPlus, XAMPP, Apache, MySQL, PHP, browser-based configuration, local server testing, and basic web customization.</p>
+      </div>
+      <div class="glass-card">
+        <h2>My Role</h2>
+        <ul>
+          <li>Installed and configured SubjectPlus in a local server environment.</li>
+          <li>Created sample guide structures, menus, and resource links.</li>
+          <li>Tested customization options and library web integration possibilities.</li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <h2>Outcome</h2>
+        <p>The project improved practical understanding of subject guide platforms and their role in digital information services, especially for research support and user-centered resource access.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="btn-box">
+    <a href="Projects.html" class="back-btn">&larr; Back To Projects</a>
+  </div>
+
+  <footer>
+    <img src="interlude-footer.png" alt="Stick figure" class="footer-stick">
+    <p>made with care by athul a</p>
+    <p>Copyright © athul 2026</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+

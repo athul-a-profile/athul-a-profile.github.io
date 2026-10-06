@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athul A | Research Support Services</title>
+  <link rel="icon" type="image/jpeg" href="athul-sketch.jpg">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo">Athul A<span>.</span></a>
+    <button class="menu-btn" id="menuToggle">☰</button>
+    <ul id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="library-guides.html">Library Guides</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="./Athul-CV.pdf" download class="nav-cta">Download CV</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <span class="hero-tag">Research Support Project</span>
+    <h1>Reference & Plagiarism <span>Support Services</span></h1>
+    <p>Supported academic integrity and research workflows by configuring tools, organizing user guides, and running citation database support workshops.</p>
+  </section>
+
+  <section>
+    <div class="grid">
+      <div class="glass-card">
+        <h2>Project Overview</h2>
+        <p>This project focused on establishing research support systems that assist students, researchers, and faculty members in citation management and maintaining academic integrity. By utilizing tools like Zotero, Mendeley, and Turnitin, we created a comprehensive reference support service.</p>
+      </div>
+      <div class="glass-card">
+        <h2>Focus Areas & Tools</h2>
+        <ul>
+          <li>Zotero and Mendeley database importing, exporting, and citation generation.</li>
+          <li>Turnitin account creation, class enrollment, and similarity report analysis.</li>
+          <li>Scholarly citation styles compliance (APA, MLA, Chicago, Harvard).</li>
+          <li>Research support documentation and self-paced video tutorials.</li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <h2>My Role</h2>
+        <ul>
+          <li>Created user guides and cheat-sheets for exporting metadata from library catalogs to Zotero/Mendeley.</li>
+          <li>Assisted researchers with Turnitin similarity index troubleshooting and class setups.</li>
+          <li>Organized quick reference handouts on formatting guidelines and plagiarism prevention.</li>
+          <li>Addressed daily reference queries regarding databases and journal finder navigation.</li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <h2>Outcome</h2>
+        <p>The research support workflows reduced citation errors, improved reference collection speed for active researchers, and lowered academic plagiarism rates through proactive user education.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="btn-box">
+    <a href="Projects.html" class="back-btn">&larr; Back To Projects</a>
+  </div>
+
+  <footer>
+    <img src="interlude-footer.png" alt="Stick figure" class="footer-stick">
+    <p>made with care by athul a</p>
+    <p>Copyright © athul 2026</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+

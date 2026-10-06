@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Athul A - Curriculum Vitae</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap');
+
+  @page {
+    size: A4;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #111111;
+    background: #FFFFFF;
+    line-height: 1.45;
+    font-size: 9.5pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Header Section */
+  .resume-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 14px;
+  }
+
+  .portrait-wrap {
+    width: 95px;
+    height: 95px;
+    min-width: 95px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    overflow: hidden;
+    background: #FAFAFA;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .portrait-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .header-content {
+    flex: 1;
+  }
+
+  .header-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 23pt;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin-bottom: 3px;
+  }
+
+  .header-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #000000;
+    margin-bottom: 7px;
+  }
+
+  .contact-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.8pt;
+    color: #222222;
+  }
+
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .contact-item span.label {
+    font-weight: 600;
+    color: #000000;
+  }
+
+  /* Section Styles */
+  .section {
+    margin-bottom: 13px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12.5pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #000000;
+    text-transform: uppercase;
+  }
+
+  .section-title .mono-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  /* Summary Text */
+  .summary-text {
+    font-size: 9pt;
+    line-height: 1.5;
+    color: #222222;
+    text-align: justify;
+  }
+
+  /* Experience Entries */
+  .exp-item {
+    margin-bottom: 11px;
+    page-break-inside: avoid;
+  }
+
+  .exp-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .exp-role {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .exp-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    font-weight: 600;
+    color: #000000;
+    background: #F0F0F0;
+    padding: 2px 7px;
+    border-radius: 9999px;
+    border: 1px solid #000000;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .exp-inst {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 3px;
+  }
+
+  .exp-desc {
+    font-size: 8.8pt;
+    line-height: 1.45;
+    color: #333333;
+    margin-bottom: 4px;
+  }
+
+  .exp-bullets {
+    padding-left: 17px;
+    margin-top: 3px;
+  }
+
+  .exp-bullets li {
+    font-size: 8.6pt;
+    line-height: 1.42;
+    color: #222222;
+    margin-bottom: 3px;
+  }
+
+  .exp-bullets li strong {
+    font-weight: 600;
+    color: #000000;
+  }
+
+  /* Education Grid */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .edu-box {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 8px 11px;
+    background: #FAFAFA;
+    page-break-inside: avoid;
+  }
+
+  .edu-degree {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .edu-inst {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.8pt;
+    color: #333333;
+    margin: 1px 0 2px;
+  }
+
+  .edu-score {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: #000000;
+  }
+
+  /* Skills Columns */
+  .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 14px;
+  }
+
+  .skill-group {
+    page-break-inside: avoid;
+  }
+
+  .skill-group-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 4px;
+    border-bottom: 1px dashed #AAAAAA;
+    padding-bottom: 2px;
+  }
+
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.4pt;
+    font-weight: 500;
+    padding: 2px 7px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 9999px;
+    color: #000000;
+  }
+
+  /* Two Column Row */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .cert-list {
+    list-style: none;
+  }
+
+  .cert-list li {
+    font-size: 8.5pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .cert-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .ref-box {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: #FAFAFA;
+    margin-bottom: 6px;
+    font-size: 8.2pt;
+    line-height: 1.35;
+  }
+
+  .ref-name {
+    font-weight: 700;
+    color: #000000;
+    font-size: 8.8pt;
+  }
+
+  .ref-title {
+    font-size: 7.8pt;
+    color: #333333;
+    margin-bottom: 2px;
+  }
+
+  .ref-contact {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.4pt;
+    color: #111111;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header with Portrait -->
+  <header class="resume-header">
+    <div class="portrait-wrap">
+      <img src="athul-portrait.jpg" alt="Athul A.">
+    </div>
+    <div class="header-content">
+      <h1 class="header-name">Athul A</h1>
+      <div class="header-title">Digital Library & Information Science Specialist</div>
+      <div class="contact-strip">
+        <span class="contact-item"><span class="label">EMAIL:</span> athulandikkavil@gmail.com</span>
+        <span class="contact-item"><span class="label">PHONE:</span> +91 9947029726</span>
+        <span class="contact-item"><span class="label">LOCATION:</span> Bangalore / Calicut, India</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Professional Summary -->
+  <section class="section">
+    <h2 class="section-title">Professional Profile <span class="mono-tag">// Executive Summary</span></h2>
+    <p class="summary-text">
+      Dedicated Library & Information Science professional specializing in the implementation, development, and administration of digital library architectures, Springshare ecosystems (LibApps, LibGuides, LibInsight, LibWizard), institutional repositories (DSpace 7), integrated library systems (Koha ILS), and custom web-based library work management software. Proven track record across premier national institutes including IIM Bangalore, IIM Kozhikode, and IIT Gandhinagar in optimizing scholarly discovery, automating circulation workflows, administering Linux servers, and engineering intuitive digital research services.
+    </p>
+  </section>
+
+  <!-- Professional Experience -->
+  <section class="section">
+    <h2 class="section-title">Professional Experience <span class="mono-tag">// Institutional Progression</span></h2>
+
+    <!-- Job 1: IIM Bangalore -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Junior Professional Assistant – Digital Library Team</span>
+        <span class="exp-date">March 2026 – Present</span>
+      </div>
+      <div class="exp-inst">Indian Institute of Management Bangalore (IIMB) Library</div>
+      <ul class="exp-bullets">
+        <li>Work with the <strong>Digital Library Team</strong> on the implementation, administration, and development of digital library services, platforms, and web-based solutions.</li>
+        <li>Manage and administer <strong>Springshare library platforms</strong>, including <strong>LibApps, LibGuides, LibAnswers, LibCal, LibWizard, LibStaffer, LibInsight, and LibConnect</strong>.</li>
+        <li>Develop and maintain <strong>LibGuides & subject guides</strong>, supporting the organization and discovery of electronic databases, e-journals, and research materials.</li>
+        <li>Lead library data operations with <strong>LibInsight</strong> for dataset ingestion, analytical reporting, and performance evaluation of library services and usage metrics.</li>
+        <li>Design and build interactive <strong>LibWizard tutorials</strong> for user education, library orientation, database access, and information literacy training.</li>
+        <li>Contribute to the continuous development and redesign of the <strong>IIM Bangalore Library website</strong>, creating landing pages, service FAQs, and digital portal features.</li>
+        <li>Architected and developed a <strong>custom Work Management System</strong> to streamline staff tasks, role assignments, recurring workflows, approvals, and activity tracking.</li>
+        <li>Develop and maintain web applications and digital-library utilities using <strong>PHP, MySQL/MariaDB, HTML5, CSS3, JavaScript</strong>, and <strong>Linux server environments</strong>.</li>
+        <li>Support the Digital Library Team in implementing new digital services, improving workflows, and developing technology-based solutions for library operations.</li>
+        <li>Create and publish digital content, tutorials, promotional guides, and social media communications to maximize research awareness and patron engagement.</li>
+      </ul>
+    </div>
+
+    <!-- Job 2: IIM Kozhikode -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Library & Information Associate / Junior Professional</span>
+        <span class="exp-date">Nov 2024 – Feb 2026</span>
+      </div>
+      <div class="exp-inst">Indian Institute of Management Kozhikode (IIMK)</div>
+      <ul class="exp-bullets">
+        <li>Assisted in the maintenance, installation, and server administration of digital library platforms, OPAC search, and Linux-based repository servers.</li>
+        <li>Coordinated with the Course Support Team for academic case studies, simulation licenses, textbook acquisitions, and procurement reports.</li>
+        <li>Managed circulation desk services, patron database queries, automated check-outs/returns, and thematic curations; led guided visitor tours at the Indian Business Museum.</li>
+      </ul>
+    </div>
+
+    <!-- Job 3: IIT Gandhinagar -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Library Professional Trainee</span>
+        <span class="exp-date">July 2023 – July 2024</span>
+      </div>
+      <div class="exp-inst">Indian Institute of Technology Gandhinagar (IITGN)</div>
+      <ul class="exp-bullets">
+        <li>Rotated through Resource Access & User Services, Research Support & IT Management (RSIMS), and Acquisition & Technical Services.</li>
+        <li>Prepared comprehensive e-resource research guides and built web versions using SubjectPlus; conducted Search Engine Optimization (SEO) audits for library discovery indexes.</li>
+        <li>Hands-on system administration for open-source platforms including Koha ILS and DSpace institutional repository.</li>
+      </ul>
+    </div>
+
+    <!-- Job 4: IIM Ahmedabad -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Library Intern</span>
+        <span class="exp-date">July 2022 – Aug 2022</span>
+      </div>
+      <div class="exp-inst">Indian Institute of Management Ahmedabad (IIMA)</div>
+      <p class="exp-desc">
+        Rotated across Vikram Sarabhai Library sections: Circulation, Print & Acquisitions, Online Databases, IT Applications, and Reference Services.
+      </p>
+    </div>
+  </section>
+
+  <!-- Technical Competencies & Systems -->
+  <section class="section">
+    <h2 class="section-title">Core Competencies & Technical Skills <span class="mono-tag">// Tool Matrix</span></h2>
+    <div class="skills-container">
+      <div class="skill-group">
+        <div class="skill-group-title">Springshare & Digital Library Platforms</div>
+        <div class="skill-pills">
+          <span class="pill">LibApps Suite</span>
+          <span class="pill">LibGuides CMS</span>
+          <span class="pill">LibInsight</span>
+          <span class="pill">LibWizard</span>
+          <span class="pill">LibCal</span>
+          <span class="pill">LibAnswers</span>
+          <span class="pill">LibStaffer</span>
+          <span class="pill">Koha ILS</span>
+          <span class="pill">DSpace 7</span>
+          <span class="pill">SubjectPlus</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Web Development & Server Administration</div>
+        <div class="skill-pills">
+          <span class="pill">PHP</span>
+          <span class="pill">MySQL / MariaDB</span>
+          <span class="pill">HTML5 & CSS3</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Linux / Ubuntu Server</span>
+          <span class="pill">Apache & XAMPP</span>
+          <span class="pill">WordPress CMS</span>
+          <span class="pill">Work Management Systems</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Research Support, Metadata & Analytics</div>
+        <div class="skill-pills">
+          <span class="pill">RemoteXs Proxy</span>
+          <span class="pill">MARC21 & Dublin Core</span>
+          <span class="pill">Turnitin Feedback Studio</span>
+          <span class="pill">Drillbit Plagiarism</span>
+          <span class="pill">Zotero & Mendeley</span>
+          <span class="pill">Web of Science</span>
+          <span class="pill">Scopus</span>
+          <span class="pill">Library SEO</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Languages & Soft Skills</div>
+        <div class="skill-pills">
+          <span class="pill">English (Professional)</span>
+          <span class="pill">Malayalam (Native)</span>
+          <span class="pill">Hindi (Conversational)</span>
+          <span class="pill">Tamil (Conversational)</span>
+          <span class="pill">User Instruction</span>
+          <span class="pill">Project Coordination</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Qualifications -->
+  <section class="section">
+    <h2 class="section-title">Education & Credentials <span class="mono-tag">// Academic Background</span></h2>
+    <div class="edu-grid">
+      <div class="edu-box">
+        <div class="edu-degree">Master of Library & Information Science (M.Lib.I.Sc)</div>
+        <div class="edu-inst">Pondicherry University (Central University) &bull; 2021 – 2023</div>
+        <div class="edu-score">Result: 78% (First Class with Distinction)</div>
+      </div>
+      <div class="edu-box">
+        <div class="edu-degree">Bachelor of Science in Physics (B.Sc Physics)</div>
+        <div class="edu-inst">University of Calicut &bull; 2017 – 2020</div>
+        <div class="edu-score">Result: 63% (First Class)</div>
+      </div>
+      <div class="edu-box">
+        <div class="edu-degree">Higher Secondary Examination (Science Stream)</div>
+        <div class="edu-inst">Kerala Board of Higher Secondary Education &bull; 2015 – 2017</div>
+        <div class="edu-score">Result: 82% (Distinction)</div>
+      </div>
+      <div class="edu-box">
+        <div class="edu-degree">Secondary School Leaving Certificate (SSLC)</div>
+        <div class="edu-inst">Kerala Board of Public Examinations &bull; 2014 – 2015</div>
+        <div class="edu-score">Result: 95% (Full A+ Grade)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications, Memberships & References Row -->
+  <section class="section" style="margin-bottom:0;">
+    <div class="two-col">
+      <div>
+        <h2 class="section-title">Certifications & Networks</h2>
+        <ul class="cert-list">
+          <li><strong>UGC NET Qualified:</strong> National Eligibility Test for Assistant Professor in Library & Information Science (June 2023).</li>
+          <li><strong>Web of Science Certified:</strong> Clarivate Analytics Certification Program 2023 (Season 3) on Citation Analytics.</li>
+          <li><strong>ADINET Life Member:</strong> Ahmedabad Library Network (Life Membership No: L0009).</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Professional References</h2>
+        <div class="ref-box">
+          <div class="ref-name">Dr. Appasaheb Naikal</div>
+          <div class="ref-title">Head of Library, Museum, Media & PR &bull; IIM Kozhikode</div>
+          <div class="ref-contact">Email: librarian@iimk.ac.in | Phone: +91 8971759096</div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-name">Dr. T. S. Kumbar</div>
+          <div class="ref-title">Advisor (Library & Institute Archives) &bull; IIT Gandhinagar</div>
+          <div class="ref-contact">Email: tskumbar@iitgn.ac.in | Phone: +91 9825921864</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+

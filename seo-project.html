@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athul A | SEO Project</title>
+  <link rel="icon" type="image/jpeg" href="athul-sketch.jpg">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo">Athul A<span>.</span></a>
+    <button class="menu-btn" id="menuToggle">☰</button>
+    <ul id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="library-guides.html">Library Guides</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="./Athul-CV.pdf" download class="nav-cta">Download CV</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <span class="hero-tag">SEO & Discoverability Project</span>
+    <h1>Library Website <span>SEO Analysis</span></h1>
+    <p>Analyzed library website visibility, metadata, search performance, and discovery pathways to support better online access to library services and resources.</p>
+  </section>
+
+  <section>
+    <div class="grid">
+      <div class="glass-card">
+        <h2>Project Overview</h2>
+        <p>This project examined how library website content appears to users and search engines. The work focused on improving discoverability, page clarity, indexing readiness, and metadata consistency.</p>
+      </div>
+      <div class="glass-card">
+        <h2>Focus Areas</h2>
+        <ul>
+          <li>Page titles, descriptions, headings, and internal linking.</li>
+          <li>Search-friendly content structure for library services.</li>
+          <li>Visibility of databases, guides, and support pages.</li>
+          <li>Basic technical SEO observations and usability signals.</li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <h2>My Role</h2>
+        <p>I reviewed website pages, identified improvement opportunities, prepared observations, and connected SEO recommendations with library user needs and research support goals.</p>
+      </div>
+      <div class="glass-card">
+        <h2>Outcome</h2>
+        <p>The analysis supported better understanding of how library websites can become more discoverable, user-friendly, and aligned with digital service delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="btn-box">
+    <a href="Projects.html" class="back-btn">&larr; Back To Projects</a>
+  </div>
+
+  <footer>
+    <img src="interlude-footer.png" alt="Stick figure" class="footer-stick">
+    <p>made with care by athul a</p>
+    <p>Copyright © athul 2026</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+

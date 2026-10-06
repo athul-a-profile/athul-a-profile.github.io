@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'IBM Plex Mono', monospace;
+  background-color:#FFFFFF;
+  color:#000000;
+  overflow-x:hidden;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+@media (min-width: 992px) {
+  body {
+    zoom: 1.1;
+  }
+}
+
+nav{
+  width:100%;
+  padding:16px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  background:rgba(255, 255, 255, 0.92);
+  border-bottom:1px solid #000000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:16px;
+  font-weight:600;
+  color:#000000;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+.logo-img{
+  width:32px;
+  height:32px;
+  border-radius:8px;
+  object-fit:cover;
+  border:1px solid rgba(0, 0, 0, 0.15);
+  box-shadow:0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.logo span{
+  color:#000000;
+}
+
+nav ul{
+  display:flex;
+  gap:24px;
+  list-style:none;
+  align-items:center;
+}
+
+nav a{
+  font-family:'IBM Plex Mono', monospace;
+  text-decoration:none;
+  color:#000000;
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  transition:all 0.25s ease;
+  font-weight:500;
+}
+
+nav a:hover,
+nav a.active{
+  color:#000000;
+  text-decoration:underline;
+  text-underline-offset:6px;
+}
+
+.nav-cta{
+  padding:8px 20px !important;
+  background:#000000 !important;
+  color:#FFFFFF !important;
+  border:1.5px solid #000000 !important;
+  border-radius:9999px !important;
+  text-decoration:none !important;
+}
+
+.nav-cta:hover{
+  background:#FFFFFF !important;
+  color:#000000 !important;
+  text-decoration:none !important;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 4px;
+}
+
+.hero{
+  padding:150px 8% 50px;
+  text-align:center;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 18px;
+  border-radius:9999px;
+  background:#FFFFFF;
+  border:1.5px solid #000000;
+  color:#000000;
+  margin-bottom:24px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.08em;
+  font-weight:600;
+  text-transform:uppercase;
+}
+
+.hero-tag::before{
+  content:'';
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#000000;
+}
+
+h1{
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:52px;
+  line-height:1.15;
+  margin-bottom:20px;
+  font-weight:700;
+  color:#000000;
+  letter-spacing:-0.03em;
+}
+
+h1 span{
+  color:#000000;
+  font-style:italic;
+}
+
+.hero p{
+  max-width:760px;
+  margin:0 auto;
+  color:#000000;
+  line-height:1.85;
+  font-size:15.5px;
+  font-weight:400;
+}
+
+section{
+  padding:40px 8%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:26px;
+}
+
+/* Interlude Dotted Card */
+.glass-card{
+  background-color:#FFFFFF;
+  background-image:url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='14,12.5 15.5,14 14,15.5 12.5,14' fill='%23C8C8C8'/%3E%3C/svg%3E");
+  background-size:28px 28px;
+  border:1.5px solid #000000;
+  border-radius:28px;
+  padding:36px 32px;
+  position:relative;
+  transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.glass-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.glass-card h2{
+  font-family:'Playfair Display', Georgia, serif;
+  color:#000000;
+  margin-bottom:16px;
+  font-size:24px;
+  font-weight:700;
+  border-bottom:1.5px solid #000000;
+  padding-bottom:12px;
+  letter-spacing:-0.01em;
+}
+
+.glass-card p,
+.glass-card li{
+  color:#000000;
+  line-height:1.8;
+  font-size:14.5px;
+}
+
+.glass-card ul{
+  padding-left:20px;
+}
+
+.glass-card li{
+  margin-bottom:10px;
+}
+
+.glass-card li::marker{
+  color:#000000;
+}
+
+.btn-box{
+  text-align:center;
+  padding:20px 8% 80px;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 30px;
+  border-radius:9999px;
+  background:#000000;
+  border:1.5px solid #000000;
+  color:#FFFFFF;
+  text-decoration:none;
+  font-family:'IBM Plex Mono', monospace;
+  font-weight:500;
+  font-size:12.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  transition:all 0.25s ease;
+  box-shadow:0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover{
+  background:#FFFFFF;
+  color:#000000;
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Footer Stick Figure */
+.footer-stick{
+  width:38px;
+  height:auto;
+  margin:0 auto 16px;
+  display:block;
+  opacity:0.85;
+}
+
+footer{
+  padding:50px 8% 60px;
+  text-align:center;
+  color:#000000;
+  border-top:1px solid #000000;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.05em;
+  line-height:2;
+}
+
+@media(max-width:900px){
+  h1{
+    font-size:38px;
+  }
+
+  nav{
+    padding:16px 6%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  nav ul{
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:280px;
+    height:100vh;
+    background:rgba(255, 255, 255, 0.98);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    padding:100px 35px;
+    gap:24px;
+    transition:right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left:1.5px solid #000000;
+    box-shadow:-10px 0 30px rgba(0, 0, 0, 0.08);
+    align-items:flex-start;
+  }
+
+  nav ul.active{
+    right:0;
+  }
+
+  .hero{
+    padding-top:130px;
+  }
+}
+
+
+
+
+
+

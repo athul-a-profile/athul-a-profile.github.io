@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athul A | Koha ILS Project</title>
+  <link rel="icon" type="image/jpeg" href="athul-sketch.jpg">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo">Athul A<span>.</span></a>
+    <button class="menu-btn" id="menuToggle">☰</button>
+    <ul id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="library-guides.html">Library Guides</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="./Athul-CV.pdf" download class="nav-cta">Download CV</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <span class="hero-tag">Library Management System Project</span>
+    <h1>Koha ILS <span>Implementation & Customization</span></h1>
+    <p>Administered and configured open-source Koha Integrated Library System (ILS) to manage library operations, MARC21 records, and circulation rules.</p>
+  </section>
+
+  <section>
+    <div class="grid">
+      <div class="glass-card">
+        <h2>Project Overview</h2>
+        <p>This project involved setting up and administering the Koha Integrated Library System, one of the world's most widely used open-source library management platforms. The goal was to configure administrative controls, customize the Online Public Access Catalog (OPAC), and set up robust database cataloging standards.</p>
+      </div>
+      <div class="glass-card">
+        <h2>Focus Areas & Tools</h2>
+        <ul>
+          <li>MARC21 bibliographic format and cataloging standards.</li>
+          <li>Circulation rules, fine structures, and patron profile settings.</li>
+          <li>Koha administration panel and SQL report generation.</li>
+          <li>OPAC system theme customization (CSS & HTML blocks).</li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <h2>My Role</h2>
+        <ul>
+          <li>Defined circulation matrices (loan periods, renewals, and fines) for different user categories.</li>
+          <li>Cataloged print resources using MARC21 tags for books, periodicals, and media.</li>
+          <li>Wrote custom SQL queries in Koha's reports module to extract inventory and circulation data.</li>
+          <li>Customized the OPAC search layout and library news alerts area.</li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <h2>Outcome</h2>
+        <p>The resulting configuration streamlined day-to-day library operations, improved search precision for library users, and provided administrators with clear data dashboards for resource planning.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="btn-box">
+    <a href="Projects.html" class="back-btn">&larr; Back To Projects</a>
+  </div>
+
+  <footer>
+    <img src="interlude-footer.png" alt="Stick figure" class="footer-stick">
+    <p>made with care by athul a</p>
+    <p>Copyright © athul 2026</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+
