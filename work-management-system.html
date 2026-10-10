@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athul A | Library Work Management System - IIM Bangalore</title>
+  <link rel="icon" type="image/jpeg" href="athul-sketch.jpg">
+  
+  <meta name="description" content="Athul A, Library and Information Science professional. Explore digital library projects, research systems, experience, and professional credentials.">
+  <link rel="stylesheet" href="site.css?v=20261010-header">
+  <script src="site.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Athul A home">Athul A<span>.</span></a>
+      <button class="menu-btn" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu"><span class="menu-icon" aria-hidden="true"></span></button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Projects.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="professional-development.html">Upskilling</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="Athul-CV.pdf" download class="nav-btn">Download CV <span aria-hidden="true">&nbsp;&darr;</span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <main id="main-content" tabindex="-1">
+
+  <section class="hero">
+    <span class="hero-tag">IIM Bangalore Library &bull; Custom Web Application</span>
+    <h1>Library Work <span>Management System</span></h1>
+    <p>
+      Custom Full-Stack Web Application for Internal Task Tracking, Workflow Approvals, Role Management & Operational Reporting
+    </p>
+
+    <div class="meta-badges">
+      <span class="meta-badge status-badge">&bull; In Production</span>
+      <span class="meta-badge">PHP & MySQL</span>
+      <span class="meta-badge">IIM Bangalore</span>
+      <span class="meta-badge">Workflow Automation</span>
+      <span class="meta-badge">RBAC & Auditing</span>
+      <span class="meta-badge">Linux Server</span>
+    </div>
+
+    <div class="project-actions">
+      <a href="Projects.html" class="action-link action-secondary">
+        &larr; View All Projects
+      </a>
+      <a href="resume.html" class="action-link action-primary">
+        View Professional Resume &rarr;
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid">
+
+      <div class="glass-card full-width-card">
+        <h2>Executive Overview & Purpose</h2>
+        <p>
+          At academic and research institutions like <strong>IIM Bangalore</strong>, library operations involve multifaceted workflows spanning acquisition, digital platform maintenance, patron support, e-resource trials, cataloging routines, and administrative coordination. Relying on fragmented emails, verbal handoffs, or static spreadsheets often creates tracking blind spots and communication bottlenecks.
+        </p>
+        <p>
+          To resolve these operational challenges, I developed a <strong>custom Work Management System (WMS)</strong> tailored specifically to the operational architecture of the IIM Bangalore Library. Built from the ground up using <strong>PHP and MySQL/MariaDB</strong>, the platform centralizes internal task delegation, automates recurring maintenance schedules, handles hierarchical approvals, logs full activity histories, and delivers actionable workload analytics to library leadership.
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <h2>Key Modules & Capabilities</h2>
+        <ul class="features-list">
+          <li><strong>Task Assignment & Lifecycle Tracking:</strong> Create, categorize, assign, and track time-sensitive operational tasks with priorities, deadlines, and progress states.</li>
+          <li><strong>Role-Based Access Control (RBAC):</strong> Multi-tier user permission structure ensuring staff members, sectional team leads, and administrators access relevant actions and datasets securely.</li>
+          <li><strong>Recurring Task Automation:</strong> Configurable recurring schedules for routine library work, such as daily stack inspections, weekly database connectivity audits, and monthly usage statistics compilation.</li>
+          <li><strong>Multi-Level Approval Workflows:</strong> Formal review and approval chains for resource procurement, administrative requests, and project deliverables before task sign-off.</li>
+          <li><strong>Timestamped Activity Logs & Audit Trails:</strong> Comprehensive logging of status transitions, reassignments, comments, and file attachments for operational accountability.</li>
+          <li><strong>Reporting & Productivity Dashboard:</strong> Visual dashboards and tabular reports summarizing completion rates, pending backlogs, and team turnaround times.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card">
+        <h2>Technical Architecture & Development</h2>
+        <p>
+          The system was designed with clean relational database structures, high usability, and zero dependencies on expensive proprietary SaaS tools:
+        </p>
+        <ul>
+          <li><strong>Backend Development:</strong> Built in PHP following clean modular design patterns for routing, authentication, session security, and business logic execution.</li>
+          <li><strong>Database Schema:</strong> Normalized MySQL/MariaDB relational database with indexed tables for users, roles, tasks, recurring templates, approvals, comments, and audit logs.</li>
+          <li><strong>Frontend & UI:</strong> Semantic HTML5, CSS3, and JavaScript delivering a fast, responsive, and intuitive interface accessible on desktop and mobile browsers.</li>
+          <li><strong>Deployment Environment:</strong> Hosted and maintained on the institute’s secure internal Linux server environment with Apache web server.</li>
+          <li><strong>Security & Integrity:</strong> Implemented prepared statements for SQL injection prevention, password hashing, CSRF tokens, and strict role validation on all endpoints.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card full-width-card">
+        <h2>Operational Impact & Value Delivered</h2>
+        <p>
+          The deployment of the Work Management System transformed day-to-day coordination across the IIM Bangalore Library:
+        </p>
+        <ul>
+          <li><strong>Complete Operational Visibility:</strong> Section heads and administrators now have real-time oversight of pending, active, and completed deliverables across all library verticals.</li>
+          <li><strong>Accountability & Transparency:</strong> Every action and task transition is chronologically recorded, eliminating ambiguity regarding task ownership and timelines.</li>
+          <li><strong>Zero Recurring Work Missed:</strong> Automated task generation guarantees that periodic maintenance, compliance tasks, and subscription checks are triggered on schedule.</li>
+          <li><strong>Streamlined Institutional Reporting:</strong> Automated analytics eliminate the need for manual data gathering during quarterly reviews and annual library reports.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="btn-box">
+    <a href="Projects.html" class="back-btn">&larr; Back To Projects Catalog</a>
+  </div>
+
+  </main>
+  <footer class="site-footer">
+    <div><strong>Athul A.</strong> Digital libraries. Research. Knowledge access.</div>
+    <p>&copy; 2026 Athul A &nbsp; <a href="mailto:athulandikkavil@gmail.com">Get in touch &nearr;</a></p>
+  </footer>
+</body>
+
+</html>
+

@@ -7,551 +7,30 @@
   <title>Athul A | Interactive Resume</title>
 
   <link rel="icon" type="image/jpeg" href="athul-sketch.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'IBM Plex Mono', monospace;
-      background-color:#FFFFFF;
-      min-height:100vh;
-    }
-
-    @media (min-width: 992px) {
-      body {
-        zoom: 1.1;
-      }
-    }
-
-    /* Nav Bar */
-    nav{
-      width:100%;
-      padding:16px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:fixed;
-      top:0;
-      z-index:1000;
-      backdrop-filter:blur(20px);
-      -webkit-backdrop-filter:blur(20px);
-      background:rgba(255, 255, 255, 0.94);
-      border-bottom:1px solid #000000;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:16px;
-      font-weight:600;
-      color:#000000;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      text-decoration:none;
-    }
-
-    .logo-img{
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      object-fit:cover;
-      border:1px solid rgba(0, 0, 0, 0.15);
-      box-shadow:0 2px 6px rgba(0, 0, 0, 0.06);
-    }
-
-    nav ul{
-      display:flex;
-      gap:24px;
-      list-style:none;
-      align-items:center;
-    }
-
-    nav ul li a{
-      font-family:'IBM Plex Mono', monospace;
-      text-decoration:none;
-      color:#000000;
-      font-size:12px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      transition:all 0.25s ease;
-      font-weight:500;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active{
-      color:#000000;
-      text-decoration:underline;
-      text-underline-offset:6px;
-    }
-
-    .nav-btn{
-      padding:8px 22px !important;
-      background:#000000 !important;
-      color:#FFFFFF !important;
-      border:1.5px solid #000000 !important;
-      border-radius:9999px !important;
-      text-decoration:none !important;
-    }
-
-    .nav-btn:hover{
-      background:#FFFFFF !important;
-      color:#000000 !important;
-      text-decoration:none !important;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 22px;
-      background: none;
-      border: none;
-      color: #000000;
-      cursor: pointer;
-      z-index: 1001;
-      padding: 4px;
-    }
-
-    .page-wrap{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 24px;
-    }
-
-    /* Hero */
-    .hero{
-      padding:150px 0 50px;
-      text-align:center;
-    }
-
-    .hero-top-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      padding:7px 20px;
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:9999px;
-      margin-bottom:24px;
-      color:#000000;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:11.5px;
-      font-weight:600;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-    }
-
-    .hero-top-pill .dot{
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:#000000;
-    }
-
-    h1{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:52px;
-      line-height:1.15;
-      margin-bottom:18px;
-      font-weight:700;
-      color:#000000;
-      letter-spacing:-0.03em;
-    }
-
-    .action-buttons{
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:28px;
-    }
-
-    .btn{
-      padding:12px 28px;
-      border-radius:9999px;
-      text-decoration:none;
-      font-family:'IBM Plex Mono', monospace;
-      font-weight:500;
-      transition:all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      font-size:12.5px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      gap:8px;
-    }
-
-    .primary-btn{
-      background:#000000;
-      color:#FFFFFF;
-      border:1.5px solid #000000;
-      box-shadow:0 4px 14px rgba(0, 0, 0, 0.12);
-    }
-
-    .primary-btn:hover{
-      background:#FFFFFF;
-      color:#000000;
-      transform:translateY(-2px);
-      box-shadow:0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .secondary-btn{
-      border:1.5px solid #000000;
-      color:#000000;
-      background:#FFFFFF;
-      box-shadow:0 2px 10px rgba(0, 0, 0, 0.03);
-    }
-
-    .secondary-btn:hover{
-      background:#000000;
-      color:#FFFFFF;
-      transform:translateY(-2px);
-      box-shadow:0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    /* Sections */
-    section{
-      padding:50px 0;
-    }
-
-    .divider-title{
-      text-align:center;
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:36px;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      text-transform:uppercase;
-      color:#000000;
-      margin:70px 0 36px;
-    }
-
-    /* Interlude Dotted Card */
-    .interlude-card{
-      background-color:#FFFFFF;
-      background-size:28px 28px;
-      border:1.5px solid #000000;
-      border-radius:28px;
-      padding:36px 32px;
-      position:relative;
-      transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow:0 4px 20px rgba(0, 0, 0, 0.03);
-      margin-bottom:28px;
-    }
-
-    .interlude-card:hover{
-      transform:translateY(-3px);
-      box-shadow:0 12px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Timeline Styling */
-    .timeline{
-      display:flex;
-      flex-direction:column;
-      gap:24px;
-    }
-
-    .timeline-card-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1.5px solid #000000;
-      padding-bottom:14px;
-      margin-bottom:16px;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .timeline-card-header h3{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:24px;
-      font-weight:700;
-      color:#000000;
-      letter-spacing:-0.01em;
-    }
-
-    .timeline-period{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:11.5px;
-      font-weight:600;
-      color:#000000;
-      padding:4px 14px;
-      border:1.5px solid #000000;
-      border-radius:9999px;
-      background:#FFFFFF;
-      text-transform:uppercase;
-    }
-
-    .timeline-institution{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:13.5px;
-      font-weight:600;
-      color:#000000;
-      margin-bottom:12px;
-      text-transform:uppercase;
-      letter-spacing:0.04em;
-    }
-
-    .timeline-desc{
-      font-size:14.5px;
-      line-height:1.85;
-      color:#000000;
-    }
-
-    .timeline-bullets{
-      margin-top:12px;
-      padding-left:20px;
-    }
-
-    .timeline-bullets li{
-      font-size:14px;
-      line-height:1.8;
-      color:#000000;
-      margin-bottom:8px;
-    }
-
-    .timeline-bullets li strong{
-      font-weight:600;
-    }
-
-    /* Grids */
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-      gap:24px;
-    }
-
-    .edu-card h3{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:22px;
-      font-weight:700;
-      color:#000000;
-      margin-bottom:8px;
-    }
-
-    .edu-meta{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      font-weight:600;
-      color:#000000;
-      margin-bottom:12px;
-      text-transform:uppercase;
-    }
-
-    .edu-score{
-      margin-top:10px;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      font-weight:600;
-      color:#000000;
-      padding:4px 10px;
-      border:1px solid #000000;
-      border-radius:6px;
-      display:inline-block;
-      background:#FFFFFF;
-    }
-
-    /* Skills Grid inside card */
-    .skills-category{
-      margin-bottom:24px;
-    }
-
-    .skills-category:last-child{
-      margin-bottom:0;
-    }
-
-    .skills-category h4{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12.5px;
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:0.06em;
-      margin-bottom:12px;
-      color:#000000;
-      border-bottom:1px solid rgba(0, 0, 0, 0.15);
-      padding-bottom:6px;
-    }
-
-    .skills-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .skill-tag{
-      padding:6px 16px;
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:9999px;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      font-weight:500;
-      letter-spacing:0.04em;
-      text-transform:uppercase;
-      color:#000000;
-      transition:all 0.2s ease;
-    }
-
-    .skill-tag:hover{
-      background:#000000;
-      color:#FFFFFF;
-    }
-
-    .btn-box{
-      text-align:center;
-      padding:40px 0 80px;
-    }
-
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 30px;
-      border-radius:9999px;
-      background:#000000;
-      border:1.5px solid #000000;
-      color:#FFFFFF;
-      text-decoration:none;
-      font-family:'IBM Plex Mono', monospace;
-      font-weight:500;
-      font-size:12.5px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      transition:all 0.25s ease;
-    }
-
-    .back-btn:hover{
-      background:#FFFFFF;
-      color:#000000;
-      transform:translateY(-2px);
-    }
-
-    /* Footer */
-    footer{
-      padding:70px 0 60px;
-      text-align:center;
-      border-top:1px solid #000000;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      letter-spacing:0.05em;
-      color:#000000;
-      line-height:2;
-    }
-
-    .footer-stick{
-      width:36px;
-      height:auto;
-      display:block;
-      margin:0 auto 18px;
-      opacity:0.85;
-    }
-
-    @media(max-width:900px){
-      nav{
-        padding:16px 6%;
-      }
-
-      .menu-btn{
-        display:block;
-      }
-
-      nav ul{
-        display:flex;
-        flex-direction:column;
-        position:fixed;
-        top:0;
-        right:-100%;
-        width:280px;
-        height:100vh;
-        background:rgba(255, 255, 255, 0.98);
-        backdrop-filter:blur(24px);
-        -webkit-backdrop-filter:blur(24px);
-        padding:100px 35px;
-        gap:24px;
-        transition:right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        border-left:1.5px solid #000000;
-        box-shadow:-10px 0 30px rgba(0, 0, 0, 0.08);
-        align-items:flex-start;
-      }
-
-      nav ul.active{
-        right:0;
-      }
-
-      h1{
-        font-size:38px;
-      }
-
-      .timeline-card-header{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .divider-title{
-        font-size:24px;
-        margin:45px 0 24px;
-      }
-    }
-
-    /* Print Stylesheet */
-    @media print {
-      body {
-        background: white !important;
-        color: black !important;
-        font-size: 11pt !important;
-        font-family: serif !important;
-      }
-
-      body::before, body::after, nav, .btn-box, footer, .action-buttons, .menu-btn {
-        display: none !important;
-      }
-
-      .hero {
-        padding: 10px 0 20px !important;
-      }
-
-      .hero h1 {
-        font-size: 20pt !important;
-      }
-
-      .interlude-card {
-        border: 1px solid #999 !important;
-        background: none !important;
-        box-shadow: none !important;
-        page-break-inside: avoid;
-        margin-bottom: 16px !important;
-        padding: 18px !important;
-      }
-    }
-  </style>
+  <meta name="description" content="Athul A, Library and Information Science professional. Explore digital library projects, research systems, experience, and professional credentials.">
+  <link rel="stylesheet" href="site.css?v=20261010-header">
+  <script src="site.js" defer></script>
 </head>
 
 <body>
 
-  <nav>
-    <a href="index.html" class="logo">Athul A<span>.</span></a>
-    <button class="menu-btn" id="menuToggle" aria-label="Toggle navigation">☰</button>
-    <ul id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="Projects.html">Projects</a></li>
-      <li><a href="resume.html" class="active">Resume</a></li>
-      <li><a href="library-guides.html">Library Guides</a></li>
-      <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#skills">Skills</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="./Athul-CV.pdf" download class="nav-btn">Download CV</a></li>
-    </ul>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Athul A home">Athul A<span>.</span></a>
+      <button class="menu-btn" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu"><span class="menu-icon" aria-hidden="true"></span></button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="resume.html" class="active" aria-current="page">Resume</a></li>
+        <li><a href="professional-development.html">Upskilling</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="Athul-CV.pdf" download class="nav-btn">Download CV <span aria-hidden="true">&nbsp;&darr;</span></a></li>
+      </ul>
+    </div>
   </nav>
+  <main id="main-content" tabindex="-1">
 
   <div class="page-wrap">
 
@@ -560,7 +39,7 @@
         <span class="dot"></span>
         <span>Curriculum Vitae</span>
       </div>
-      <h1>Interactive Resume</h1>
+      <h1>Experience &amp; expertise</h1>
       <div class="action-buttons">
         <button onclick="window.print()" class="btn primary-btn">
           Print Resume / Save PDF
@@ -571,23 +50,21 @@
       </div>
     </div>
 
-    <!-- Experience Timeline -->
     <section id="experience">
-      <div class="divider-title">~ professional progression ~</div>
-      <div class="timeline">
-
-        <!-- Job 1 (Current) -->
-        <div class="interlude-card">
-          <div class="timeline-card-header">
+      <h2 class="divider-title">Professional progression</h2>
+      <ol class="scroll-timeline" aria-label="Professional experience timeline">
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">March 2026 - Present</p>
+          <div class="scroll-content">
             <h3>Junior Professional Assistant – Digital Library Team</h3>
-            <span class="timeline-period">March 2026 - Present</span>
-          </div>
-          <div class="timeline-institution">Indian Institute of Management Bangalore (IIMB)</div>
-          <p class="timeline-desc">
+            <p class="scroll-institution">Indian Institute of Management Bangalore (IIMB)</p>
+            <p class="timeline-desc">
             Working with the Digital Library Team on the implementation, administration, and development of digital library services, platforms, and web-based solutions.
           </p>
-          <ul class="timeline-bullets">
+            <ul class="timeline-bullets">
             <li>Involved in the implementation and management of <strong>Springshare library platforms</strong>, including <strong>LibApps, LibGuides, LibAnswers, LibCal, LibWizard, LibStaffer, LibInsight, and LibConnect</strong>.</li>
+            <li>Working on the installation, server configuration, interface customization, and subject guide creation for <strong>SubjectPlus</strong>.</li>
             <li>Developed and maintained <strong>LibGuides and subject guides</strong>, supporting the organization and discovery of electronic resources and research materials.</li>
             <li>Worked extensively with <strong>LibInsight</strong> for library data management, dataset uploads, reporting, and analysis of library services and usage statistics.</li>
             <li>Designed and developed <strong>LibWizard tutorials</strong> for user education, including research support, library orientation, database access, and information-literacy resources.</li>
@@ -597,50 +74,49 @@
             <li>Support the Digital Library Team in implementing new digital services, improving existing workflows, and developing technology-based solutions for library operations and user services.</li>
             <li>Create and manage <strong>digital content, tutorials, promotional materials, and social-media communications</strong> to improve awareness and use of library resources and services.</li>
           </ul>
-        </div>
-
-        <!-- Job 2 -->
-        <div class="interlude-card">
-          <div class="timeline-card-header">
+          </div>
+        </li>
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">Nov 2024 - Feb 2026</p>
+          <div class="scroll-content">
             <h3>Library & Information Associate</h3>
-            <span class="timeline-period">Nov 2024 - Feb 2026</span>
-          </div>
-          <div class="timeline-institution">Indian Institute of Management Kozhikode (IIMK)</div>
-          <p class="timeline-desc">
-            Operating across Information Resource Access & User Services, Research Support & IT Management Services, and Information Resource Acquisition & Technical Services. Facilitating digital library operations, circulation desks, database access portals, library website maintenance, and researcher support workflows.
+            <p class="scroll-institution">Indian Institute of Management Kozhikode (IIMK)</p>
+            <p class="timeline-desc">
+            Spearheaded the <strong>"Know Your Resources (KYR)"</strong> Subject Guides platform using SubjectsPlus 4.6 (receiving institutional appreciation). Architected comprehensive taxonomies across Company Information, Socio-Economic Indicators, 17 Industry Sectors, and 8 Academic Disciplines. Authored staff SOPs, managed digital library operations, database access portals, and researcher support workflows.
           </p>
-        </div>
-
-        <!-- Job 2 -->
-        <div class="interlude-card">
-          <div class="timeline-card-header">
-            <h3>Library Professional Trainee</h3>
-            <span class="timeline-period">July 2023 - July 2024</span>
+            
           </div>
-          <div class="timeline-institution">Indian Institute of Technology Gandhinagar (IITGN)</div>
-          <p class="timeline-desc">
+        </li>
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">July 2023 - July 2024</p>
+          <div class="scroll-content">
+            <h3>Library Professional Trainee</h3>
+            <p class="scroll-institution">Indian Institute of Technology Gandhinagar (IITGN)</p>
+            <p class="timeline-desc">
             Assisted with the deployment and management of critical library systems (DSpace, Koha). Performed library website SEO audits to increase visibility of research indexes. Drafted e-resource research guides, configured SubjectPlus, and managed server administration tasks.
           </p>
-        </div>
-
-        <!-- Job 3 -->
-        <div class="interlude-card">
-          <div class="timeline-card-header">
-            <h3>Library Intern</h3>
-            <span class="timeline-period">July 2022 - Aug 2022</span>
+            
           </div>
-          <div class="timeline-institution">Indian Institute of Management Ahmedabad (IIMA)</div>
-          <p class="timeline-desc">
+        </li>
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">July 2022 - Aug 2022</p>
+          <div class="scroll-content">
+            <h3>Library Intern</h3>
+            <p class="scroll-institution">Indian Institute of Management Ahmedabad (IIMA)</p>
+            <p class="timeline-desc">
             Obtained foundational exposure in library administration, research databases, book acquisitions, cataloging systems, reference queries, user management, and automated circulation services.
           </p>
-        </div>
-
-      </div>
+            
+          </div>
+        </li>
+      </ol>
     </section>
 
-    <!-- Skills Matrix -->
     <section id="skills">
-      <div class="divider-title">~ competencies & systems ~</div>
+      <h2 class="divider-title">Competencies & systems</h2>
       <div class="interlude-card">
         <div class="skills-category">
           <h4>Springshare & Digital Library Platforms</h4>
@@ -685,39 +161,36 @@
       </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education">
-      <div class="divider-title">~ academic trajectory ~</div>
-      <div class="grid-3">
-
-        <div class="interlude-card edu-card">
-          <h3>M.Lib.I.Sc</h3>
-          <div class="edu-meta">Pondicherry University &bull; 2021 - 2023</div>
-          <p>Master of Library & Information Science</p>
-          <span class="edu-score">Score: 78% (First Class with Distinction)</span>
-        </div>
-
-        <div class="interlude-card edu-card">
-          <h3>B.Sc Physics</h3>
-          <div class="edu-meta">University of Calicut &bull; 2017 - 2020</div>
-          <p>Bachelor of Science in Physics</p>
-          <span class="edu-score">Score: 63% (First Class)</span>
-        </div>
-
-        <div class="interlude-card edu-card">
-          <h3>Higher Secondary</h3>
-          <div class="edu-meta">Kerala Board &bull; 2015 - 2017</div>
-          <p>Science Stream Concentration</p>
-          <span class="edu-score">Score: 82% (Distinction)</span>
-        </div>
-
+      <h2 class="divider-title">Academic trajectory</h2>
+      <div class="timeline">
+        <article class="interlude-card">
+          <div class="timeline-card-header"><h3>Master of Library &amp; Information Science</h3><span class="timeline-period">2021 – 2023</span></div>
+          <p class="timeline-institution">Pondicherry University</p>
+          <p>78% · First Class with Distinction</p>
+        </article>
+        <article class="interlude-card">
+          <div class="timeline-card-header"><h3>Bachelor of Science in Physics</h3><span class="timeline-period">2017 – 2020</span></div>
+          <p class="timeline-institution">University of Calicut</p>
+          <p>63% · First Class</p>
+        </article>
+        <article class="interlude-card">
+          <div class="timeline-card-header"><h3>Higher Secondary · Science</h3><span class="timeline-period">2015 – 2017</span></div>
+          <p class="timeline-institution">Kerala Board</p>
+          <p>82% · Distinction</p>
+        </article>
       </div>
     </section>
 
-    <!-- Certifications & Affiliations -->
     <section id="certifications">
-      <div class="divider-title">~ credentials & memberships ~</div>
+      <h2 class="divider-title">Credentials & memberships</h2>
       <div class="grid-3">
+
+        <div class="interlude-card edu-card">
+          <h3>Oxford DHOxSS 2025</h3>
+          <div class="edu-meta">University of Oxford &bull; Bodleian Libraries &bull; Aug 2025</div>
+          <p>Awarded international bursary for Digital Humanities @ Oxford Summer School; completed specialized strand on <strong>AI in Research Libraries</strong>.</p>
+        </div>
 
         <div class="interlude-card edu-card">
           <h3>UGC NET Qualified</h3>
@@ -740,11 +213,10 @@
       </div>
     </section>
 
-    <!-- Languages -->
     <section id="languages">
-      <div class="divider-title">~ languages ~</div>
-      <div class="interlude-card" style="text-align:center;">
-        <div class="skills-tags" style="justify-content:center;">
+      <h2 class="divider-title">Languages</h2>
+      <div class="interlude-card">
+        <div class="skills-tags">
           <span class="skill-tag">English (Professional)</span>
           <span class="skill-tag">Malayalam (Native)</span>
           <span class="skill-tag">Hindi (Conversational)</span>
@@ -757,42 +229,17 @@
       <a href="index.html" class="back-btn">&larr; Back To Home</a>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <img src="interlude-footer.png" alt="Stick figure illustration" class="footer-stick">
-      <p>made with care by athul a</p>
-      <p>Copyright © athul 2026</p>
-    </footer>
-
   </div>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        menuToggle.textContent = '☰';
-      }
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.textContent = '☰';
-      });
-    });
-  </script>
-
+  </main>
+  <footer class="site-footer">
+    <div><strong>Athul A.</strong> Digital libraries. Research. Knowledge access.</div>
+    <p>&copy; 2026 Athul A &nbsp; <a href="mailto:athulandikkavil@gmail.com">Get in touch &nearr;</a></p>
+  </footer>
 </body>
 
 </html>
+
 
 
 

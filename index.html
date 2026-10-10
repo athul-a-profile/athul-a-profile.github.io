@@ -7,727 +7,85 @@
   <title>Athul A | Digital Libraries & Research Specialist</title>
   
   <link rel="icon" type="image/jpeg" href="athul-portrait.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'IBM Plex Mono', monospace;
-      background-color:#FFFFFF;
-      color:#000000;
-      overflow-x:hidden;
-      line-height:1.75;
-      min-height:100vh;
-    }
-
-    @media (min-width: 992px) {
-      body {
-        zoom: 1.1;
-      }
-    }
-
-    /* Nav Bar */
-    nav{
-      width:100%;
-      padding:16px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:fixed;
-      top:0;
-      z-index:1000;
-      backdrop-filter:blur(20px);
-      -webkit-backdrop-filter:blur(20px);
-      background:rgba(255, 255, 255, 0.95);
-      border-bottom:1px solid #000000;
-    }
-
-    .logo{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:16px;
-      font-weight:600;
-      color:#000000;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      text-decoration:none;
-    }
-
-    .logo span{
-      color:#000000;
-    }
-
-    nav ul{
-      display:flex;
-      gap:24px;
-      list-style:none;
-      align-items:center;
-    }
-
-    nav ul li a{
-      font-family:'IBM Plex Mono', monospace;
-      text-decoration:none;
-      color:#000000;
-      font-size:12px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      transition:all 0.2s ease;
-      font-weight:500;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active{
-      color:#000000;
-      text-decoration:underline;
-      text-underline-offset:6px;
-    }
-
-    .nav-btn{
-      padding:8px 22px !important;
-      background:#000000 !important;
-      color:#FFFFFF !important;
-      border:1.5px solid #000000 !important;
-      border-radius:9999px !important;
-      text-decoration:none !important;
-      font-weight:500 !important;
-      transition:all 0.2s ease;
-    }
-
-    .nav-btn:hover{
-      background:#FFFFFF !important;
-      color:#000000 !important;
-      text-decoration:none !important;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 22px;
-      background: none;
-      border: none;
-      color: #000000;
-      cursor: pointer;
-      z-index: 1001;
-      padding: 4px;
-    }
-
-    .page-wrap{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 24px;
-    }
-
-    /* Hero Section */
-    .hero{
-      padding:160px 0 70px;
-      position:relative;
-    }
-
-    .hero-layout{
-      display:grid;
-      grid-template-columns:1.2fr 0.85fr;
-      gap:52px;
-      align-items:center;
-    }
-
-    .hero-content{
-      text-align:left;
-    }
-
-    .hero-statement{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:52px;
-      font-weight:800;
-      line-height:1.15;
-      letter-spacing:-0.03em;
-      margin:0 0 20px;
-      color:#000000;
-      white-space:nowrap;
-    }
-
-    .hero-desc{
-      max-width:620px;
-      margin:0 0 32px;
-      color:#000000;
-      font-size:14.5px;
-      line-height:1.85;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      justify-content:flex-start;
-      flex-wrap:wrap;
-    }
-
-    /* Hero Right Side Big Image Card */
-    .hero-image-wrap{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .hero-image-card{
-      width:100%;
-      max-width:440px;
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:28px;
-      padding:14px;
-      background-image:url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='14,12.5 15.5,14 14,15.5 12.5,14' fill='%23C0C0C0'/%3E%3C/svg%3E");
-      background-size:28px 28px;
-      box-shadow:0 12px 35px rgba(0, 0, 0, 0.08);
-      transition:transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-    }
-
-    .hero-image-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 45px rgba(0, 0, 0, 0.12);
-    }
-
-    .hero-big-img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:18px;
-      border:1.5px solid #000000;
-      object-fit:cover;
-      background:#FFFFFF;
-    }
-
-    .btn{
-      padding:12px 28px;
-      border-radius:9999px;
-      text-decoration:none;
-      font-family:'IBM Plex Mono', monospace;
-      font-weight:500;
-      transition:all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      font-size:12.5px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      text-align:center;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .primary-btn{
-      background:#000000;
-      color:#FFFFFF;
-      border:1.5px solid #000000;
-    }
-
-    .primary-btn:hover{
-      background:#FFFFFF;
-      color:#000000;
-      transform:translateY(-2px);
-    }
-
-    .secondary-btn{
-      border:1.5px solid #000000;
-      color:#000000;
-      background:#FFFFFF;
-    }
-
-    .secondary-btn:hover{
-      background:#000000;
-      color:#FFFFFF;
-      transform:translateY(-2px);
-    }
-
-    /* Sunburst Section Divider */
-    .sunburst-divider{
-      text-align:center;
-      margin:60px 0 30px;
-    }
-
-    .sunburst-img{
-      width:76px;
-      height:auto;
-      display:block;
-      margin:0 auto 16px;
-    }
-
-    .divider-title{
-      text-align:center;
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:36px;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      text-transform:uppercase;
-      color:#000000;
-      margin:70px 0 36px;
-    }
-
-    /* Pure Black & White Interlude Dotted Card */
-    .interlude-card{
-      background-color:#FFFFFF;
-      background-image:url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='14,12.5 15.5,14 14,15.5 12.5,14' fill='%23C0C0C0'/%3E%3C/svg%3E");
-      background-size:28px 28px;
-      border:1.5px solid #000000;
-      border-radius:28px;
-      padding:36px 32px;
-      position:relative;
-      transition:all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-
-    .interlude-card:hover{
-      transform:translateY(-3px);
-      box-shadow:0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .card-top-tag{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:11.5px;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      color:#000000;
-      font-weight:600;
-      text-align:center;
-      margin-bottom:24px;
-    }
-
-    .card-inner-box{
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:22px;
-      padding:30px 24px;
-      flex-grow:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      text-align:center;
-      margin-bottom:24px;
-    }
-
-    .card-inner-box h3{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:26px;
-      color:#000000;
-      margin-bottom:12px;
-      font-weight:700;
-      letter-spacing:-0.02em;
-    }
-
-    .card-inner-box p{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      line-height:1.75;
-      color:#000000;
-      text-transform:uppercase;
-      letter-spacing:0.04em;
-    }
-
-    .card-footer-btn{
-      align-self:center;
-      padding:10px 24px;
-      border-radius:9999px;
-      background:#000000;
-      color:#FFFFFF;
-      border:1.5px solid #000000;
-      text-decoration:none;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:11.5px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      transition:all 0.2s ease;
-      font-weight:500;
-    }
-
-    .card-footer-btn:hover{
-      background:#FFFFFF;
-      color:#000000;
-      transform:translateY(-2px);
-    }
-
-    /* Grids */
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:28px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-      gap:24px;
-    }
-
-    /* Classical Figures Illustration Banner */
-    .classical-figures-banner{
-      margin:60px 0;
-      text-align:center;
-      border:1.5px solid #000000;
-      border-radius:32px;
-      padding:40px 24px;
-      background:#FFFFFF;
-    }
-
-    .classical-figures-banner img{
-      max-width:100%;
-      height:auto;
-      display:block;
-      margin:0 auto 24px;
-      max-height:420px;
-      object-fit:contain;
-    }
-
-    .classical-figures-caption{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:26px;
-      color:#000000;
-      font-style:italic;
-      margin-bottom:8px;
-    }
-
-    .classical-figures-sub{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      color:#000000;
-      text-transform:uppercase;
-      letter-spacing:0.06em;
-    }
-
-    /* Philosophy / "How this came to be" text layout */
-    .editorial-section{
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:28px;
-      padding:50px 45px;
-      background-image:url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='14,12.5 15.5,14 14,15.5 12.5,14' fill='%23C0C0C0'/%3E%3C/svg%3E");
-      background-size:28px 28px;
-      margin-bottom:40px;
-    }
-
-    .editorial-title{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:36px;
-      font-weight:700;
-      color:#000000;
-      margin-bottom:28px;
-      letter-spacing:-0.02em;
-    }
-
-    .editorial-p{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:15px;
-      line-height:1.9;
-      color:#000000;
-      margin-bottom:22px;
-    }
-
-    /* Skills Pill Cloud */
-    .skills-cloud{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:12px;
-      max-width:960px;
-      margin:0 auto;
-    }
-
-    .skill-pill{
-      padding:10px 22px;
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:9999px;
-      color:#000000;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12.5px;
-      font-weight:500;
-      letter-spacing:0.04em;
-      text-transform:uppercase;
-      transition:all 0.2s ease;
-    }
-
-    .skill-pill:hover{
-      background:#000000;
-      color:#FFFFFF;
-      transform:translateY(-2px);
-    }
-
-    /* Contact Details */
-    .contact-card{
-      max-width:680px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .contact-links{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-      margin-top:20px;
-    }
-
-    .contact-link-item{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:14px;
-      color:#000000;
-      text-decoration:none;
-      font-weight:500;
-      transition:all 0.2s ease;
-      padding:12px 20px;
-      border:1.5px solid #000000;
-      border-radius:9999px;
-      background:#FFFFFF;
-    }
-
-    .contact-link-item:hover{
-      background:#000000;
-      color:#FFFFFF;
-      transform:translateY(-2px);
-    }
-
-    /* Footer */
-    footer{
-      padding:70px 0 60px;
-      text-align:center;
-      border-top:1px solid #000000;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      letter-spacing:0.05em;
-      color:#000000;
-      line-height:2;
-    }
-
-    .footer-stick{
-      width:36px;
-      height:auto;
-      display:block;
-      margin:0 auto 18px;
-    }
-
-    @media(max-width:900px){
-      nav{
-        padding:16px 6%;
-      }
-
-      .menu-btn{
-        display:block;
-      }
-
-      nav ul{
-        display:flex;
-        flex-direction:column;
-        position:fixed;
-        top:0;
-        right:-100%;
-        width:280px;
-        height:100vh;
-        background:#FFFFFF;
-        padding:100px 35px;
-        gap:24px;
-        transition:right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        border-left:1.5px solid #000000;
-        box-shadow:-10px 0 30px rgba(0, 0, 0, 0.08);
-        align-items:flex-start;
-      }
-
-      nav ul.active{
-        right:0;
-      }
-
-      .grid-2{
-        grid-template-columns:1fr;
-      }
-
-      .hero{
-        padding-top:130px;
-      }
-
-      .hero-layout{
-        grid-template-columns:1fr;
-        gap:36px;
-        text-align:center;
-      }
-
-      .hero-content{
-        text-align:center;
-      }
-
-      .hero-statement{
-        font-size:32px;
-        white-space:normal;
-        margin-bottom:18px;
-      }
-
-      .hero-desc{
-        margin:0 auto 28px;
-      }
-
-      .hero-actions{
-        justify-content:center;
-      }
-
-      .hero-image-wrap{
-        max-width:320px;
-        margin:0 auto;
-      }
-
-      .editorial-section{
-        padding:34px 24px;
-      }
-
-      .editorial-title{
-        font-size:28px;
-      }
-
-      .divider-title{
-        font-size:24px;
-        margin:45px 0 24px;
-      }
-    }
-  </style>
+  <meta name="description" content="Athul A, Library and Information Science professional. Explore digital library projects, research systems, experience, and professional credentials.">
+  <link rel="stylesheet" href="site.css?v=20261010-header">
+  <script src="site.js" defer></script>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html" class="logo">Athul A<span>.</span></a>
-    <button class="menu-btn" id="menuToggle" aria-label="Toggle navigation">☰</button>
-    <ul id="navMenu">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="Projects.html">Projects</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="library-guides.html">Library Guides</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="./Athul-CV.pdf" download class="nav-btn">Download CV</a></li>
-    </ul>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Athul A home">Athul A<span>.</span></a>
+      <button class="menu-btn" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu"><span class="menu-icon" aria-hidden="true"></span></button>
+      <ul id="navMenu">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="professional-development.html">Upskilling</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="Athul-CV.pdf" download class="nav-btn">Download CV <span aria-hidden="true">&nbsp;&darr;</span></a></li>
+      </ul>
+    </div>
   </nav>
+  <main id="main-content" tabindex="-1">
 
   <div class="page-wrap">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero home-hero" id="home">
       <div class="hero-layout">
-
-        <!-- Left Column: Content -->
         <div class="hero-content">
-          <h1 class="hero-statement">
-            Hi, I am Athul A,
-          </h1>
-
-          <div class="hero-desc">
-            <p style="margin-bottom:14px;">
-              A dedicated library professional passionate about improving the library profession and contributing to better knowledge and information services.
-            </p>
-            <p>
-              Based at IIM Bangalore, specializing in Springshare platforms (LibApps, LibGuides, LibInsight, LibWizard), institutional repositories, Koha ILS, and custom web applications. I transform academic and research libraries into intuitive, resilient digital ecosystems.
-            </p>
-          </div>
-
+          <p class="eyebrow">Library &amp; Information Science Professional</p>
+          <h1 class="hero-statement">Athul A.</h1>
+          <h2 class="hero-role">Connecting people, knowledge<br>and digital systems.</h2>
+          <div class="hero-desc"><p>Based at IIM Bangalore, I develop digital library platforms, research discovery tools, and workflows that make academic knowledge easier to access.</p></div>
           <div class="hero-actions">
-            <a href="Projects.html" class="btn primary-btn">Explore Projects</a>
-            <a href="resume.html" class="btn secondary-btn">Interactive Resume</a>
-            <a href="library-guides.html" class="btn secondary-btn">Library Guides</a>
-            <a href="./Athul-CV.pdf" download class="btn secondary-btn">Download CV</a>
+            <a href="Projects.html" class="btn primary-btn">Explore my work <span aria-hidden="true">&rarr;</span></a>
+            <a href="resume.html" class="btn secondary-btn">View resume</a>
           </div>
         </div>
-
-        <!-- Right Column: Big Portrait Card -->
-        <div class="hero-image-wrap">
-          <div class="hero-image-card">
-            <img src="athul-portrait.jpg" alt="Athul A. - Library Professional" class="hero-big-img">
-          </div>
-        </div>
-
+        <figure class="portrait">
+          <img src="athul-portrait.jpg" alt="Athul A, library and information science professional" width="1024" height="1024" fetchpriority="high">
+          <figcaption>Junior Professional Assistant<br>Digital Library Team, IIM Bangalore</figcaption>
+        </figure>
+      </div>
+      <div class="institution-strip" aria-label="Professional experience">
+        <span>Experience across</span><span>IIM Bangalore</span><span>IIM Kozhikode</span><span>IIT Gandhinagar</span><span>IIM Ahmedabad</span>
       </div>
     </section>
 
-    <!-- Engraved Renaissance Sunburst Divider -->
-    <div class="sunburst-divider">
-      <img src="sunburst.png" alt="Sunburst Icon" class="sunburst-img">
-      <div class="divider-title">~ HOW IT WORKS ~</div>
-    </div>
+    <div class="sunburst-divider"><h2 class="divider-title">Selected projects</h2></div>
 
-    <!-- Featured Projects Grid (4-Card Interlude Layout) -->
-    <section id="projects-preview" style="padding-top:10px;">
-      <div class="grid-2">
-
-        <!-- Card 1 -->
-        <div class="interlude-card">
-          <div class="card-top-tag">
-            INSTITUTIONAL REPOSITORY. OPEN ACCESS. DSPACE 7.
-          </div>
-          <div class="card-inner-box">
-            <h3>DSpace Repository</h3>
-            <p>
-              Centralizing 25,000+ scholarly outputs, faculty papers, and theses with Dublin Core schema and OAI-PMH interoperability.
-            </p>
-          </div>
-          <a href="dspace-repository.html" class="card-footer-btn">Explore Project &rarr;</a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="interlude-card">
-          <div class="card-top-tag">
-            AUTOMATION. CATALOGING. KOHA ILS.
-          </div>
-          <div class="card-inner-box">
-            <h3>Koha ILS Administration</h3>
-            <p>
-              Full-lifecycle automation of circulation, MARC21 cataloging, Z39.50 search, and real-time OPAC discovery.
-            </p>
-          </div>
-          <a href="koha-ils.html" class="card-footer-btn">Explore Project &rarr;</a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="interlude-card">
-          <div class="card-top-tag">
-            OFF-CAMPUS ACCESS. SECURITY. REMOTEXS.
-          </div>
-          <div class="card-inner-box">
-            <h3>RemoteXs Cloud Proxy</h3>
-            <p>
-              Providing 10,000+ patrons with single-sign-on authenticated off-campus access to subscribed e-journals and databases.
-            </p>
-          </div>
-          <a href="remotexs.html" class="card-footer-btn">Explore Project &rarr;</a>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="interlude-card">
-          <div class="card-top-tag">
-            SCHOLARLY PORTALS. RESEARCH IMPACT. LIBGUIDES.
-          </div>
-          <div class="card-inner-box">
-            <h3>LibGuides & Portals</h3>
-            <p>
-              Interactive discipline-specific research guides, bibliometrics tracking, citation analysis, and researcher toolkits.
-            </p>
-          </div>
-          <a href="libguides.html" class="card-footer-btn">Explore Project &rarr;</a>
-        </div>
-
+    <section id="projects-preview">
+      <div class="project-index">
+        <article class="project-row">
+          <span class="project-number" aria-hidden="true">01</span>
+          <div class="project-heading"><p class="project-institution">IIM Bangalore</p><h3>Library Work Management System</h3></div>
+          <p class="project-summary">A custom platform for task delegation, recurring workflows, approvals, and operational reporting.</p>
+          <a class="project-link" href="work-management-system.html" aria-label="Read case study: Library Work Management System">Case study <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="project-row">
+          <span class="project-number" aria-hidden="true">02</span>
+          <div class="project-heading"><p class="project-institution">IIM Bangalore · In progress</p><h3>SubjectPlus Implementation</h3></div>
+          <p class="project-summary">Structured subject guides and research discovery pathways, from server deployment to interface customization.</p>
+          <a class="project-link" href="subjectplus-iimb.html" aria-label="Read case study: SubjectPlus Implementation">Case study <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="project-row">
+          <span class="project-number" aria-hidden="true">03</span>
+          <div class="project-heading"><p class="project-institution">IIM Kozhikode</p><h3>Know Your Resources</h3></div>
+          <p class="project-summary">A subject-guide portal that brings databases and academic resources together. Recognized with institutional appreciation.</p>
+          <a class="project-link" href="know-your-resources.html" aria-label="Read case study: Know Your Resources">Case study <span aria-hidden="true">&rarr;</span></a>
+        </article>
       </div>
 
-      <div style="text-align:center; margin-top:40px;">
-        <a href="Projects.html" class="btn secondary-btn">View All 9 Projects &rarr;</a>
+      <div class="section-more"><a href="Projects.html" class="btn secondary-btn">View All Projects &rarr;</a>
       </div>
     </section>
 
-    <!-- Classical Figures Editorial Banner -->
     <div class="classical-figures-banner">
-      <img src="library-sketch.jpg" alt="Library Study Room Sketch - Present Without Being Seen">
+      <img loading="lazy" src="library-sketch.jpg" alt="Library Study Room Sketch - Present Without Being Seen">
       <p class="classical-figures-caption">
         "We have forgotten what it means to be present without being seen."
       </p>
@@ -736,116 +94,96 @@
       </p>
     </div>
 
-    <!-- About Section / "How this came to be" -->
     <section id="about">
-      <div class="divider-title">~ HOW THIS CAME TO BE ~</div>
+      <h2 class="divider-title">About Me</h2>
       <div class="editorial-section">
-        <h2 class="editorial-title">Bridging Scholarly Heritage & Modern Systems</h2>
+        <h3 class="editorial-title">Digital Library Services &amp; Research Support</h3>
         <p class="editorial-p">
-          Most digital spaces are built on accumulation. They want you to build a profile, grow an audience, post things that stick around. There's always something to maintain, something to check back on, some version of yourself you're curating for others.
+          I am a Library &amp; Information Science professional, currently serving as a Junior Professional Assistant with the Digital Library Team at IIM Bangalore. My experience across IIM Bangalore, IIM Kozhikode, IIT Gandhinagar, and IIM Ahmedabad covers digital library operations, electronic resource discovery, library automation, and research support.
         </p>
         <p class="editorial-p">
-          Libraries are the opposite of that. A place where research is curated without commercial tracking, and scholarly work is preserved across decades for whoever seeks it next. Not a feed to scroll, not a network to perform for. Just a quiet room of human knowledge.
+          My work combines library services with hands-on implementation of Springshare platforms, SubjectPlus, Koha, and DSpace. At IIM Bangalore, I contribute to digital platforms, usage analytics, user education, and library web development, including a custom Work Management System. Previously, I led the Know Your Resources subject-guide initiative at IIM Kozhikode, developed its resource taxonomy and staff procedures, and received institutional appreciation.
         </p>
         <p class="editorial-p">
-          As a dedicated Library & Information Science specialist with honors from Pondicherry University and hands-on experience at IIM Bangalore, IIM Kozhikode, and IIT Gandhinagar, I engineer frictionless access layers for academia. Whether configuring Springshare digital platforms, developing custom library work management systems, automating workflows in Koha ILS, or setting up secure off-campus access, my goal is to make human knowledge open, resilient, and effortless to discover.
+          I hold a Master's degree in Library &amp; Information Science from Pondicherry University, earned with distinction, and am UGC NET qualified. I was also awarded an international bursary for the 2025 Digital Humanities @ Oxford Summer School, where I completed the AI in Research Libraries strand. My professional focus is on reliable library systems, effective access to scholarly resources, and informed use of technology in academic libraries.
         </p>
       </div>
     </section>
 
-    <!-- Professional Experience Section -->
     <section id="experience">
-      <div class="divider-title">~ PROFESSIONAL JOURNEY ~</div>
-      <div class="grid-2" style="margin-bottom:28px;">
-        <!-- Current: IIM Bangalore -->
-        <div class="interlude-card">
-          <div class="card-top-tag">MARCH 2026 - PRESENT &bull; CURRENT</div>
-          <div class="card-inner-box">
+      <h2 class="divider-title">Professional journey</h2>
+      <ol class="scroll-timeline" aria-label="Professional experience timeline">
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">MARCH 2026 - PRESENT</p>
+          <div class="scroll-content">
             <h3>IIM Bangalore</h3>
-            <p>
-              Junior Professional Assistant – Digital Library Team &bull; Implementation, administration & development of Springshare platforms (LibApps, LibGuides, LibInsight, LibWizard), custom Work Management System, and library web portals.
-            </p>
+            <p class="scroll-institution">Junior Professional Assistant – Digital Library Team</p>
+            <p>Implementation, administration & development of Springshare platforms (LibApps, LibGuides, LibInsight, LibWizard), custom Work Management System, and library web portals.</p>
           </div>
-        </div>
-
-        <!-- Previous: IIM Kozhikode -->
-        <div class="interlude-card">
-          <div class="card-top-tag">NOV 2024 - FEB 2026</div>
-          <div class="card-inner-box">
+        </li>
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">NOV 2024 - FEB 2026</p>
+          <div class="scroll-content">
             <h3>IIM Kozhikode</h3>
-            <p>
-              Junior Library Professional / Associate &bull; Facilitated digital library operations, database access portals, course support acquisitions, and research workflows.
-            </p>
+            <p class="scroll-institution">Junior Library Professional / Associate</p>
+            <p>Spearheaded the "Know Your Resources (KYR)" SubjectsPlus platform (earning institutional appreciation) &bull; Managed digital library operations, database portals, and research workflows.</p>
           </div>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <!-- IIT Gandhinagar -->
-        <div class="interlude-card">
-          <div class="card-top-tag">JULY 2023 - JULY 2024</div>
-          <div class="card-inner-box">
+        </li>
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">JULY 2023 - JULY 2024</p>
+          <div class="scroll-content">
             <h3>IIT Gandhinagar</h3>
-            <p>
-              Library Professional Trainee &bull; Supported open-source deployments (DSpace, Koha), server administration, SEO audits, and SubjectPlus guides.
-            </p>
+            <p class="scroll-institution">Library Professional Trainee</p>
+            <p>Supported open-source deployments (DSpace, Koha), server administration, SEO audits, and SubjectPlus guides.</p>
           </div>
-        </div>
-
-        <!-- IIM Ahmedabad -->
-        <div class="interlude-card">
-          <div class="card-top-tag">JULY 2022 - AUG 2022</div>
-          <div class="card-inner-box">
+        </li>
+        <li class="scroll-entry">
+          <span class="scroll-marker" aria-hidden="true"></span>
+          <p class="scroll-date">JULY 2022 - AUG 2022</p>
+          <div class="scroll-content">
             <h3>IIM Ahmedabad</h3>
-            <p>
-              Library Intern &bull; Core training in reference desk operations, cataloging systems, database subscriptions, and automated circulation.
-            </p>
+            <p class="scroll-institution">Library Intern</p>
+            <p>Core training in reference desk operations, cataloging systems, database subscriptions, and automated circulation.</p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ol>
     </section>
 
-    <!-- Education Section -->
     <section id="education">
-      <div class="divider-title">~ EDUCATION & CREDENTIALS ~</div>
-      <div class="grid-3">
-
-        <div class="interlude-card">
-          <div class="card-top-tag">2021 - 2023 &bull; DISTINCTION</div>
-          <div class="card-inner-box">
-            <h3>M.Lib.I.Sc</h3>
-            <p>
-              Pondicherry University &bull; Master of Library & Information Science &bull; 78% First Class with Distinction.
-            </p>
-          </div>
-        </div>
-
-        <div class="interlude-card">
-          <div class="card-top-tag">2017 - 2020 &bull; FIRST CLASS</div>
-          <div class="card-inner-box">
-            <h3>B.Sc Physics</h3>
-            <p>
-              University of Calicut &bull; Bachelor of Science in Physics &bull; Strong analytical and data foundations.
-            </p>
-          </div>
-        </div>
-
-        <div class="interlude-card">
-          <div class="card-top-tag">JUNE 2023 &bull; NATIONAL</div>
+      <h2 class="divider-title">Education & credentials</h2>
+      <div class="grid-2 education-grid">
+        <article class="interlude-card">
+          <p class="card-top-tag">June 2023</p>
           <div class="card-inner-box">
             <h3>UGC NET Qualified</h3>
-            <p>
-              National Eligibility Test for Assistant Professor in Library & Information Science across Indian Universities.
-            </p>
+            <p class="education-school">University Grants Commission</p>
+            <p>Qualified for Assistant Professor in Library &amp; Information Science.</p>
           </div>
-        </div>
-
+        </article>
+        <article class="interlude-card">
+          <p class="card-top-tag">2021 – 2023</p>
+          <div class="card-inner-box">
+            <h3>Master of Library &amp; Information Science</h3>
+            <p class="education-school">Pondicherry University</p>
+            <p>78% · First Class with Distinction</p>
+          </div>
+        </article>
+        <article class="interlude-card">
+          <p class="card-top-tag">2017 – 2020</p>
+          <div class="card-inner-box">
+            <h3>Bachelor of Science in Physics</h3>
+            <p class="education-school">University of Calicut</p>
+            <p>First Class · Analytical and data foundations</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
-      <div class="divider-title">~ CORE PROFICIENCIES ~</div>
+      <h2 class="divider-title">Core proficiencies</h2>
       <div class="skills-cloud">
         <div class="skill-pill">Springshare LibApps</div>
         <div class="skill-pill">LibGuides CMS</div>
@@ -865,9 +203,8 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
-      <div class="divider-title">~ GET IN TOUCH ~</div>
+      <h2 class="divider-title">Get in touch</h2>
       <div class="interlude-card contact-card">
         <div class="card-top-tag">OPEN FOR COLLABORATION & RESEARCH INQUIRIES</div>
         <div class="card-inner-box">
@@ -888,42 +225,17 @@
       </div>
     </section>
 
-    <!-- Footer with Interlude Stick Figure -->
-    <footer>
-      <img src="interlude-footer.png" alt="Stick figure illustration" class="footer-stick">
-      <p>made with care by athul a</p>
-      <p>Copyright © athul 2026</p>
-    </footer>
-
   </div>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        menuToggle.textContent = '☰';
-      }
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.textContent = '☰';
-      });
-    });
-  </script>
-
+  </main>
+  <footer class="site-footer">
+    <div><strong>Athul A.</strong> Digital libraries. Research. Knowledge access.</div>
+    <p>&copy; 2026 Athul A &nbsp; <a href="mailto:athulandikkavil@gmail.com">Get in touch &nearr;</a></p>
+  </footer>
 </body>
 
 </html>
+
 
 
 

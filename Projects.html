@@ -7,342 +7,30 @@
   <title>Athul A | Featured Projects</title>
 
   <link rel="icon" type="image/jpeg" href="athul-sketch.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'IBM Plex Mono', monospace;
-      background-color:#FFFFFF;
-      min-height:100vh;
-    }
-
-    @media (min-width: 992px) {
-      body {
-        zoom: 1.1;
-      }
-    }
-
-    /* Nav Bar */
-    nav{
-      width:100%;
-      padding:16px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:fixed;
-      top:0;
-      z-index:1000;
-      backdrop-filter:blur(20px);
-      -webkit-backdrop-filter:blur(20px);
-      background:rgba(255, 255, 255, 0.94);
-      border-bottom:1px solid #000000;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:16px;
-      font-weight:600;
-      color:#000000;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      text-decoration:none;
-    }
-
-    .logo-img{
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      object-fit:cover;
-      border:1px solid rgba(0, 0, 0, 0.15);
-      box-shadow:0 2px 6px rgba(0, 0, 0, 0.06);
-    }
-
-    nav ul{
-      display:flex;
-      gap:24px;
-      list-style:none;
-      align-items:center;
-    }
-
-    nav ul li a{
-      font-family:'IBM Plex Mono', monospace;
-      text-decoration:none;
-      color:#000000;
-      font-size:12px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      transition:all 0.25s ease;
-      font-weight:500;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active{
-      color:#000000;
-      text-decoration:underline;
-      text-underline-offset:6px;
-    }
-
-    .nav-btn{
-      padding:8px 22px !important;
-      background:#000000 !important;
-      color:#FFFFFF !important;
-      border:1.5px solid #000000 !important;
-      border-radius:9999px !important;
-      text-decoration:none !important;
-    }
-
-    .nav-btn:hover{
-      background:#FFFFFF !important;
-      color:#000000 !important;
-      text-decoration:none !important;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 22px;
-      background: none;
-      border: none;
-      color: #000000;
-      cursor: pointer;
-      z-index: 1001;
-      padding: 4px;
-    }
-
-    .page-wrap{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 24px;
-    }
-
-    /* Hero */
-    .hero{
-      padding:150px 0 50px;
-      text-align:center;
-    }
-
-    .hero-top-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      padding:7px 20px;
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:9999px;
-      margin-bottom:24px;
-      color:#000000;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:11.5px;
-      font-weight:600;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-    }
-
-    .hero-top-pill .dot{
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:#000000;
-    }
-
-    h1{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:52px;
-      line-height:1.15;
-      margin-bottom:18px;
-      font-weight:700;
-      color:#000000;
-      letter-spacing:-0.03em;
-    }
-
-    .hero p{
-      max-width:760px;
-      margin:0 auto;
-      color:#000000;
-      line-height:1.85;
-      font-size:15.5px;
-    }
-
-    /* Projects Grid */
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
-      gap:28px;
-      margin:50px 0 80px;
-    }
-
-    .interlude-card{
-      background-color:#FFFFFF;
-      background-size:28px 28px;
-      border:1.5px solid #000000;
-      border-radius:28px;
-      padding:36px 32px;
-      position:relative;
-      transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow:0 4px 20px rgba(0, 0, 0, 0.03);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-
-    .interlude-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 14px 34px rgba(0, 0, 0, 0.08);
-    }
-
-    .card-top-tag{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:11px;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      color:#000000;
-      font-weight:600;
-      text-align:center;
-      margin-bottom:24px;
-    }
-
-    .card-inner-box{
-      background:#FFFFFF;
-      border:1.5px solid #000000;
-      border-radius:20px;
-      padding:28px 24px;
-      
-      
-      flex-grow:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      text-align:center;
-      margin-bottom:24px;
-    }
-
-    .card-inner-box h3{
-      font-family:'Playfair Display', Georgia, serif;
-      font-size:24px;
-      color:#000000;
-      margin-bottom:12px;
-      font-weight:700;
-      letter-spacing:-0.02em;
-    }
-
-    .card-inner-box p{
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12.5px;
-      line-height:1.75;
-      color:#000000;
-      text-transform:uppercase;
-      letter-spacing:0.03em;
-    }
-
-    .card-footer-btn{
-      align-self:center;
-      padding:10px 24px;
-      border-radius:9999px;
-      background:#000000;
-      color:#FFFFFF;
-      border:1.5px solid #000000;
-      text-decoration:none;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:11.5px;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      transition:all 0.25s ease;
-      font-weight:500;
-    }
-
-    .card-footer-btn:hover{
-      background:#FFFFFF;
-      color:#000000;
-      transform:translateY(-2px);
-    }
-
-    /* Footer */
-    footer{
-      padding:70px 0 60px;
-      text-align:center;
-      border-top:1px solid #000000;
-      font-family:'IBM Plex Mono', monospace;
-      font-size:12px;
-      letter-spacing:0.05em;
-      color:#000000;
-      line-height:2;
-    }
-
-    .footer-stick{
-      width:36px;
-      height:auto;
-      display:block;
-      margin:0 auto 18px;
-      opacity:0.85;
-    }
-
-    @media(max-width:900px){
-      nav{
-        padding:16px 6%;
-      }
-
-      .menu-btn{
-        display:block;
-      }
-
-      nav ul{
-        display:flex;
-        flex-direction:column;
-        position:fixed;
-        top:0;
-        right:-100%;
-        width:280px;
-        height:100vh;
-        background:rgba(255, 255, 255, 0.98);
-        backdrop-filter:blur(24px);
-        -webkit-backdrop-filter:blur(24px);
-        padding:100px 35px;
-        gap:24px;
-        transition:right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        border-left:1.5px solid #000000;
-        box-shadow:-10px 0 30px rgba(0, 0, 0, 0.08);
-        align-items:flex-start;
-      }
-
-      nav ul.active{
-        right:0;
-      }
-
-      h1{
-        font-size:38px;
-      }
-    }
-  </style>
+  <meta name="description" content="Athul A, Library and Information Science professional. Explore digital library projects, research systems, experience, and professional credentials.">
+  <link rel="stylesheet" href="site.css?v=20261010-header">
+  <script src="site.js" defer></script>
 </head>
 
-<body>
+<body class="projects-page">
 
-  <nav>
-    <a href="index.html" class="logo">Athul A<span>.</span></a>
-    <button class="menu-btn" id="menuToggle" aria-label="Toggle navigation">☰</button>
-    <ul id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="Projects.html" class="active">Projects</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="library-guides.html">Library Guides</a></li>
-      <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#skills">Skills</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="./Athul-CV.pdf" download class="nav-btn">Download CV</a></li>
-    </ul>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Athul A home">Athul A<span>.</span></a>
+      <button class="menu-btn" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu"><span class="menu-icon" aria-hidden="true"></span></button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Projects.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="professional-development.html">Upskilling</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="Athul-CV.pdf" download class="nav-btn">Download CV <span aria-hidden="true">&nbsp;&darr;</span></a></li>
+      </ul>
+    </div>
   </nav>
+  <main id="main-content" tabindex="-1">
 
   <div class="page-wrap">
 
@@ -357,172 +45,38 @@
       </p>
     </div>
 
-    <div class="projects-grid">
-
-      <!-- 1. DSpace -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          INSTITUTIONAL REPOSITORY &bull; OPEN SCIENCE &bull; DSPACE 7
-        </div>
-        <div class="card-inner-box">
-          <h3>DSpace Repository</h3>
-          <p>
-            Centralizing faculty papers, theses, dissertations, and research datasets with Dublin Core metadata and OAI-PMH harvesting.
-          </p>
-        </div>
-        <a href="dspace-repository.html" class="card-footer-btn">Read Case Study &rarr;</a>
+    <div class="project-index">
+        <article class="project-row">
+          <span class="project-number" aria-hidden="true">01</span>
+          <div class="project-heading"><p class="project-institution">IIM Bangalore</p><h3>Library Work Management System</h3></div>
+          <p class="project-summary">A custom platform for task delegation, recurring workflows, approvals, and operational reporting.</p>
+          <a class="project-link project-case-study" href="work-management-system.html" aria-label="Read case study: Library Work Management System">Case study <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="project-row">
+          <span class="project-number" aria-hidden="true">02</span>
+          <div class="project-heading"><p class="project-institution">IIM Bangalore · In progress</p><h3>SubjectPlus Implementation</h3></div>
+          <p class="project-summary">Structured subject guides and research discovery pathways, from server deployment to interface customization.</p>
+          <a class="project-link project-case-study" href="subjectplus-iimb.html" aria-label="Read case study: SubjectPlus Implementation">Case study <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="project-row">
+          <span class="project-number" aria-hidden="true">03</span>
+          <div class="project-heading"><p class="project-institution">IIM Kozhikode</p><h3>Know Your Resources</h3></div>
+          <p class="project-summary">A subject-guide portal that brings databases and academic resources together. Recognized with institutional appreciation.</p>
+          <a class="project-link project-case-study" href="know-your-resources.html" aria-label="Read case study: Know Your Resources">Case study <span aria-hidden="true">&rarr;</span></a>
+        </article>
       </div>
-
-      <!-- 2. Koha ILS -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          AUTOMATION &bull; CIRCULATION &bull; KOHA ILS
-        </div>
-        <div class="card-inner-box">
-          <h3>Koha ILS Administration</h3>
-          <p>
-            Full-lifecycle automation of library circulation, MARC21 bibliographic cataloging, Z39.50 search, and real-time OPAC discovery.
-          </p>
-        </div>
-        <a href="koha-ils.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-      <!-- 3. RemoteXs -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          OFF-CAMPUS ACCESS &bull; PROXY &bull; REMOTEXS
-        </div>
-        <div class="card-inner-box">
-          <h3>RemoteXs Cloud Proxy</h3>
-          <p>
-            Single-sign-on authenticated off-campus access gateway providing 10,000+ patrons with seamless 24/7 access to subscribed e-resources.
-          </p>
-        </div>
-        <a href="remotexs.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-      <!-- 4. LibGuides -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          SCHOLARLY PORTALS &bull; RESEARCH &bull; LIBGUIDES
-        </div>
-        <div class="card-inner-box">
-          <h3>LibGuides Scholarly Portals</h3>
-          <p>
-            Discipline-specific research guide portals, information literacy tutorials, and curated academic reference pathways.
-          </p>
-        </div>
-        <a href="libguides.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-      <!-- 5. Research Support -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          BIBLIOMETRICS &bull; CITATIONS &bull; RESEARCH IMPACT
-        </div>
-        <div class="card-inner-box">
-          <h3>Research Support & Metrics</h3>
-          <p>
-            Faculty publishing advisory, citation analysis, Web of Science & Scopus benchmarking, and reference management support.
-          </p>
-        </div>
-        <a href="research-support.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-      <!-- 6. SubjectPlus -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          OPEN SOURCE CMS &bull; RESEARCH GUIDES &bull; SUBJECTPLUS
-        </div>
-        <div class="card-inner-box">
-          <h3>SubjectPlus Research Guides</h3>
-          <p>
-            Deployment and customization of open-source SubjectPlus platform for organizing databases, subject portals, and librarian contacts.
-          </p>
-        </div>
-        <a href="subjectplus.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-      <!-- 7. SEO Project -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          DISCOVERY &bull; INDEXING &bull; ACADEMIC SEO
-        </div>
-        <div class="card-inner-box">
-          <h3>Library SEO & Discovery</h3>
-          <p>
-            Technical search engine optimization for academic library domains, enhancing discoverability across Google Scholar and web search.
-          </p>
-        </div>
-        <a href="seo-project.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-      <!-- 8. Designs -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          UI/UX &bull; PRINT & DIGITAL &bull; BRANDING
-        </div>
-        <div class="card-inner-box">
-          <h3>Library Design & Branding</h3>
-          <p>
-            Creating accessible user interfaces, thematic book display branding, brochures, digital signage, and library communication assets.
-          </p>
-        </div>
-        <a href="designs.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-      <!-- 9. Resource Guides -->
-      <div class="interlude-card">
-        <div class="card-top-tag">
-          DOCUMENTATION &bull; TOOLKITS &bull; USER PATHWAYS
-        </div>
-        <div class="card-inner-box">
-          <h3>Comprehensive Resource Guides</h3>
-          <p>
-            Curated research navigation paths, database user guides, open access discovery portals, and information literacy roadmaps.
-          </p>
-        </div>
-        <a href="resource-guides.html" class="card-footer-btn">Read Case Study &rarr;</a>
-      </div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <img src="interlude-footer.png" alt="Stick figure illustration" class="footer-stick">
-      <p>made with care by athul a</p>
-      <p>Copyright © athul 2026</p>
-    </footer>
 
   </div>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        menuToggle.textContent = '☰';
-      }
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.textContent = '☰';
-      });
-    });
-  </script>
-
+  </main>
+  <footer class="site-footer">
+    <div><strong>Athul A.</strong> Digital libraries. Research. Knowledge access.</div>
+    <p>&copy; 2026 Athul A &nbsp; <a href="mailto:athulandikkavil@gmail.com">Get in touch &nearr;</a></p>
+  </footer>
 </body>
 
 </html>
+
 
 
 
